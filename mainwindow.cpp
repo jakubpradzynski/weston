@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->sprayButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->lineButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->rectangleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
+    connect(ui->circleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
+    connect(ui->filledCircleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->clearButton, SIGNAL(pressed()), ui->myCanvas, SLOT(clearCanvas()));
 
     // Connect spin boxes to methods changing rgb values

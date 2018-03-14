@@ -40,6 +40,11 @@ private:
     void drawHorizontalLine(Point start, Point end, RGB rgb); // Draw horizontal line
     void drawRectangle(Point start, Point end, RGB rgb); // Draw rectangle
     void drawLineByBrasenhamsAlgorithm(Point start, Point end, RGB rgb); // Draw line using Brasenham's Algorithms
+    void drawLineUsingLinearInterpolation(Point start, Point end, RGB rgb); // Draw line using linear interpolation
+    void drawLineUsingNaiveAlgorithm(Point start, Point end, RGB rgb); // Draw line using naive algorithm
+    void drawCircle(Point center, int radius, RGB rgb); // Draw empty circle
+    int calculateRadius(Point start, Point end); // Return radius for circles
+    void drawFilledCircle(Point center, int radius, RGB rgb); // Draw filled circle
 };
 
 #endif // MYCANVAS_H

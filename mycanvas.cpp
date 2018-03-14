@@ -5,6 +5,8 @@
 #include <QMouseEvent>
 #include <QPushButton>
 
+#include <math.h>
+
 MyCanvas::MyCanvas(QWidget *parent) : QWidget(parent)
 {
     // Setting brush color to black
@@ -40,6 +42,10 @@ void MyCanvas::mouseMoveEvent(QMouseEvent *event)
     case RECTANGLE:
         drawRectangle(start, end, brushRGB);
         break;
+    case CIRCLE:
+        break;
+    case FILLEDCIRCLE:
+        break;
     default:
         break;
     }
@@ -59,10 +65,12 @@ void MyCanvas::mousePressEvent(QMouseEvent *event)
         spray(start, brushRGB);
         break;
     case LINE:
-        qDebug("Started drawing line in this point");
         break;
     case RECTANGLE:
-        qDebug("Started drawing rectangle in this point");
+        break;
+    case CIRCLE:
+        break;
+    case FILLEDCIRCLE:
         break;
     default:
         break;
@@ -81,12 +89,18 @@ void MyCanvas::mouseReleaseEvent(QMouseEvent *event)
     case SPRAY:
         break;
     case LINE:
-        drawLineByBrasenhamsAlgorithm(start, end, brushRGB);
-        qDebug("Ended drawing line in this point");
+        // drawLineByBrasenhamsAlgorithm(start, end, brushRGB);
+        // drawLineUsingLinearInterpolation(start, end, brushRGB);
+        drawLineUsingNaiveAlgorithm(start, end, brushRGB);
         break;
     case RECTANGLE:
         drawRectangle(start, end, brushRGB);
-        qDebug("Ended drawing rectangle in this point");
+        break;
+    case CIRCLE:
+        drawCircle(start, calculateRadius(start, end), brushRGB);
+        break;
+    case FILLEDCIRCLE:
+        drawFilledCircle(start, calculateRadius(start, end), brushRGB);
         break;
     default:
         break;
@@ -111,6 +125,12 @@ void MyCanvas::changeOption()
     } else if(buttonName == "rectangleButton") {
         option = RECTANGLE;
         qDebug("Option changed to %i - RECTANGLE", option);
+    } else if(buttonName == "circleButton") {
+        option = CIRCLE;
+        qDebug("Option changed to %i - CIRCLE", option);
+    } else if(buttonName == "filledCircleButton") {
+        option = FILLEDCIRCLE;
+        qDebug("Option changed to %i - FILLEDCIRCLE", option);
     } else {
         qDebug("WRONG BUTTTON!");
     }
@@ -178,6 +198,7 @@ void MyCanvas::drawHorizontalLine(Point start, Point end, RGB rgb)
 // Method drawing rectangle using method drawing horizontal line
 void MyCanvas::drawRectangle(Point start, Point end, RGB rgb)
 {
+    qDebug("Drawing rectangle");
     Point first = start, second = end;
     if(start.getX() > end.getX()) {
         first.setX(end.getX());
@@ -195,6 +216,7 @@ void MyCanvas::drawRectangle(Point start, Point end, RGB rgb)
 // Method drawing line using Brasenham's Algorithm
 void MyCanvas::drawLineByBrasenhamsAlgorithm(Point start, Point end, RGB rgb)
 {
+    qDebug("Drawing line using Brasenham's Algorithm");
     Point first = start, second = end;
     if(start.getX() > end.getX()) {
         first.setX(end.getX());
@@ -222,3 +244,97 @@ void MyCanvas::drawLineByBrasenhamsAlgorithm(Point start, Point end, RGB rgb)
         x += 1;
     }
 }
+
+// Method drawing line using linear interpolation
+void MyCanvas::drawLineUsingLinearInterpolation(Point start, Point end, RGB rgb)
+{
+    qDebug("Drawing line using linear interpolation");
+    int N = (int)(2 * sqrt(pow(end.getX() - start.getX(), 2) + pow(end.getY() - start.getY(), 2)));
+    for (int i = 0; i < N; i++) {
+        float a = (float) i / (N - 1);
+        float x = start.getX() + a * (end.getX() - start.getX());
+        float y = start.getY() + a * (end.getY() - start.getY());
+        putPixel(Point(x, y), rgb);
+    }
+}
+
+// Method drawing line using naive algorithm
+void MyCanvas::drawLineUsingNaiveAlgorithm(Point start, Point end, RGB rgb)
+{
+    qDebug("Drawing line using naive algorithm");
+    if(start == end) {
+        qDebug("Start point == end point");
+        putPixel(start, rgb);
+        return;
+    }
+    float dx = (float) end.getX() - start.getX();
+    float dy = (float) end.getY() - start.getY();
+    qDebug("Start: (%d, %d), End: (%d, %d)", start.getX(), start.getY(), end.getX(), end.getY());
+    qDebug("dx = %f .... dy = %f", dx, dy);
+    if (abs(dx) >= abs(dy)) {
+        if(start.getX() > end.getX()) {
+            Point tmp = start;
+            start = end;
+            end = tmp;
+        }
+        for (int x = start.getX(); x <= end.getX(); x++) {
+            float y = (float) start.getY() + dy * (x - start.getX()) / dx;
+            putPixel(Point(x, y), rgb);
+        }
+    } else {
+        if(start.getY() > end.getY()) {
+            Point tmp = start;
+            start = end;
+            end = tmp;
+        }
+        for (int y = start.getY(); y <= end.getY(); y++) {
+            float x = (float) start.getX() + dx * (y - start.getY()) / dy;
+            putPixel(Point(x, y), rgb);
+        }
+    }
+}
+
+// Method drawing empty circle
+void MyCanvas::drawCircle(Point center, int radius, RGB rgb)
+{
+    qDebug("Drawing circle");
+    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
+    qDebug("Radius = %d", radius);
+    for(int y = 0; y <= radius / sqrt(2); y++) {
+        float x = sqrt(pow(radius, 2) - pow(y, 2));
+        qDebug("(%f, %d)", x, y);
+        putPixel(Point(x + center.getX(), y + center.getY()), rgb);
+        putPixel(Point(-x + center.getX(), y + center.getY()), rgb);
+        putPixel(Point(x + center.getX(), -y + center.getY()), rgb);
+        putPixel(Point(-x + center.getX(), -y + center.getY()), rgb);
+        putPixel(Point(y + center.getX(), x + center.getY()), rgb);
+        putPixel(Point(-y + center.getX(), x + center.getY()), rgb);
+        putPixel(Point(y + center.getX(), -x + center.getY()), rgb);
+        putPixel(Point(-y + center.getX(), -x + center.getY()), rgb);
+    }
+}
+
+// Method return radius for circles
+int MyCanvas::calculateRadius(Point start, Point end)
+{
+    float dx = end.getX() - start.getX();
+    float dy = end.getY() - start.getY();
+    return (int) sqrt(pow(dx, 2) + pow(dy, 2));
+}
+
+// Method drawing filled circle
+void MyCanvas::drawFilledCircle(Point center, int radius, RGB rgb)
+{
+    qDebug("Drawing filled circle");
+    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
+    qDebug("Radius = %d", radius);
+    for(int y = 0; y <= radius / sqrt(2); y++) {
+        float x = sqrt(pow(radius, 2) - pow(y, 2));
+        drawHorizontalLine(Point(-x + center.getX(), y + center.getY()), Point(x + center.getX(), y + center.getY()), rgb);
+        drawHorizontalLine(Point(-y + center.getX(), x + center.getY()), Point(y + center.getX(), x + center.getY()), rgb);
+        drawHorizontalLine(Point(-y + center.getX(), -x + center.getY()), Point(y + center.getX(), -x + center.getY()), rgb);
+        drawHorizontalLine(Point(-x + center.getX(), -y + center.getY()), Point(x + center.getX(), -y + center.getY()), rgb);
+    }
+}
+
+

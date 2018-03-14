@@ -3,5 +3,7 @@ enum Option {
     PENCIL,
     SPRAY,
     LINE,
-    RECTANGLE
+    RECTANGLE,
+    CIRCLE,
+    FILLEDCIRCLE
 };
