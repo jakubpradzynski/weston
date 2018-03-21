@@ -46,6 +46,8 @@ void MyCanvas::mouseMoveEvent(QMouseEvent *event)
         break;
     case FILLEDCIRCLE:
         break;
+    case ELLIPSE:
+        break;
     default:
         break;
     }
@@ -72,6 +74,8 @@ void MyCanvas::mousePressEvent(QMouseEvent *event)
         break;
     case FILLEDCIRCLE:
         break;
+    case ELLIPSE:
+        break;
     default:
         break;
     }
@@ -97,10 +101,15 @@ void MyCanvas::mouseReleaseEvent(QMouseEvent *event)
         drawRectangle(start, end, brushRGB);
         break;
     case CIRCLE:
-        drawCircle(start, calculateRadius(start, end), brushRGB);
+//        drawCircle(start, calculateRadius(start, end), brushRGB);
+        drawCircleUsingParametricCircleEquation(start, calculateRadius(start, end), brushRGB);
         break;
     case FILLEDCIRCLE:
         drawFilledCircle(start, calculateRadius(start, end), brushRGB);
+        break;
+    case ELLIPSE:
+        drawEllipse(calculateCenterPointForEllipse(start, end), calculateFirstRadiusForEllipse(start, end), calculateSecondRadiusForEllipse(start, end), brushRGB);
+//        drawEllipseWithSlope(start, calculateFirstRadiusForEllipse(start, end), calculateSecondRadiusForEllipse(start, end), ellipseSlope, brushRGB);
         break;
     default:
         break;
@@ -131,7 +140,10 @@ void MyCanvas::changeOption()
     } else if(buttonName == "filledCircleButton") {
         option = FILLEDCIRCLE;
         qDebug("Option changed to %i - FILLEDCIRCLE", option);
-    } else {
+    } else if(buttonName == "ellipseButton") {
+        option = ELLIPSE;
+        qDebug("Option changed to %i - ELLIPSE", option);
+    }  else {
         qDebug("WRONG BUTTTON!");
     }
 }
@@ -157,6 +169,13 @@ void MyCanvas::changeBrushGValue(int g)
 void MyCanvas::changeBrushBValue(int b)
 {
     brushRGB.setB(b);
+}
+
+// Method for rotate ellipse using horizontal slider
+void MyCanvas::rotateEllipse(int slope)
+{
+    clearCanvas();
+    drawEllipseWithSlope(calculateCenterPointForEllipse(start, end), calculateFirstRadiusForEllipse(start, end), calculateSecondRadiusForEllipse(start, end), slope, brushRGB);
 }
 
 // Method drawing single pixel in point
@@ -301,8 +320,7 @@ void MyCanvas::drawCircle(Point center, int radius, RGB rgb)
     qDebug("Center point = (%d, %d)", center.getX(), center.getY());
     qDebug("Radius = %d", radius);
     for(int y = 0; y <= radius / sqrt(2); y++) {
-        float x = sqrt(pow(radius, 2) - pow(y, 2));
-        qDebug("(%f, %d)", x, y);
+        int x = sqrt(pow(radius, 2) - pow(y, 2));
         putPixel(Point(x + center.getX(), y + center.getY()), rgb);
         putPixel(Point(-x + center.getX(), y + center.getY()), rgb);
         putPixel(Point(x + center.getX(), -y + center.getY()), rgb);
@@ -328,13 +346,100 @@ void MyCanvas::drawFilledCircle(Point center, int radius, RGB rgb)
     qDebug("Drawing filled circle");
     qDebug("Center point = (%d, %d)", center.getX(), center.getY());
     qDebug("Radius = %d", radius);
-    for(int y = 0; y <= radius / sqrt(2); y++) {
-        float x = sqrt(pow(radius, 2) - pow(y, 2));
+    for(int y = 0; y <= radius; y++) {
+        int x = sqrt(pow(radius, 2) - pow(y, 2));
         drawHorizontalLine(Point(-x + center.getX(), y + center.getY()), Point(x + center.getX(), y + center.getY()), rgb);
-        drawHorizontalLine(Point(-y + center.getX(), x + center.getY()), Point(y + center.getX(), x + center.getY()), rgb);
-        drawHorizontalLine(Point(-y + center.getX(), -x + center.getY()), Point(y + center.getX(), -x + center.getY()), rgb);
         drawHorizontalLine(Point(-x + center.getX(), -y + center.getY()), Point(x + center.getX(), -y + center.getY()), rgb);
     }
 }
+
+// Method draw circle using parametric circle equation
+void MyCanvas::drawCircleUsingParametricCircleEquation(Point center, int radius, RGB rgb)
+{
+    qDebug("Drawing circle using parametric circle equation");
+    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
+    qDebug("Radius = %d", radius);
+    int N = 64;
+    int i = 0;
+    Point p1, p2;
+    float alpha;
+
+    alpha = (float) 2 * M_PI * i / N;
+    p1 = Point(radius * cos(alpha) + center.getX(), radius * sin(alpha) + center.getY());
+    for (i = 1; i <= N; i++) {
+        alpha = (float) 2 * M_PI * i / N;
+        p2 = Point(radius * cos(alpha) + center.getX(), radius * sin(alpha) + center.getY());
+        drawLineUsingNaiveAlgorithm(p1, p2, rgb);
+        p1 = p2;
+    }
+}
+
+// Method draw ellipse
+void MyCanvas::drawEllipse(Point center, int firstRadius, int secondRadius, RGB rgb)
+{
+    qDebug("Drawing ellipse");
+    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
+    qDebug("First radius = %d", firstRadius);
+    qDebug("Second radius = %d", secondRadius);
+    int N = 64;
+    int i = 0;
+    Point p1, p2;
+    float alpha;
+
+    alpha = (float) 2 * M_PI * i / N;
+    p1 = Point(firstRadius * cos(alpha) + center.getX(), secondRadius * sin(alpha) + center.getY());
+    for (i = 1; i <= N; i++) {
+        alpha = (float) 2 * M_PI * i / N;
+        p2 = Point(firstRadius * cos(alpha) + center.getX(), secondRadius * sin(alpha) + center.getY());
+        drawLineUsingNaiveAlgorithm(p1, p2, rgb);
+        p1 = p2;
+    }
+}
+
+// Method calculate center point for ellipse
+Point MyCanvas::calculateCenterPointForEllipse(Point start, Point end)
+{
+    return Point((end.getX() + start.getX()) / 2, (end.getY() + start.getY()) / 2);
+}
+
+// Method calculate first radius for ellipse
+int MyCanvas::calculateFirstRadiusForEllipse(Point start, Point end)
+{
+    return abs(end.getX() - start.getX()) / 2;
+}
+
+// Method calculate second radius for ellipse
+int MyCanvas::calculateSecondRadiusForEllipse(Point start, Point end)
+{
+    return abs(end.getY() - start.getY()) / 2;
+}
+
+// Method draw ellipse with slope
+void MyCanvas::drawEllipseWithSlope(Point center, int firstRadius, int secondRadius, int slope, RGB rgb)
+{
+    qDebug("Drawing ellipse with slope");
+    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
+    qDebug("First radius = %d", firstRadius);
+    qDebug("Second radius = %d", secondRadius);
+    qDebug("Slope = %d", slope);
+    int N = 64;
+    int i = 0;
+    Point p1, p2;
+    float alpha;
+    float beta = slope * M_PI/180;
+
+    alpha = (float) 2 * M_PI * i / N;
+    p1 = Point(firstRadius * cos(alpha), secondRadius * sin(alpha));
+    Point p1WithSlope = Point(p1.getX() * cos(beta) - p1.getY() * sin(beta)  + center.getX(), p1.getX() * sin(beta) + p1.getY() * cos(beta) + center.getY());
+    for (i = 1; i <= N; i++) {
+        alpha = (float) 2 * M_PI * i / N;
+        p2 = Point(firstRadius * cos(alpha), secondRadius * sin(alpha));
+        Point p2WithSlope = Point(p2.getX() * cos(beta) - p2.getY() * sin(beta)  + center.getX(), p2.getX() * sin(beta) + p2.getY() * cos(beta) + center.getY());
+        drawLineUsingNaiveAlgorithm(p1WithSlope, p2WithSlope, rgb);
+        p1WithSlope = p2WithSlope;
+    }
+}
+
+
 
 

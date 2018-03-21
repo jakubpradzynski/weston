@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>836</width>
-    <height>635</height>
+    <height>746</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -80,7 +80,7 @@
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>270</y>
+      <y>310</y>
       <width>113</width>
       <height>32</height>
      </rect>
@@ -128,7 +128,7 @@
      <number>255</number>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="brushColorLabel">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -165,6 +165,54 @@
     </property>
     <property name="text">
      <string>Koło</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ellipseButton">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>270</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Elipsa</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ellipseSlopeLabel">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>580</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;- Zmień nachylenie elipsy</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="ellipseSlopeSlider">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>580</y>
+      <width>531</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>360</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

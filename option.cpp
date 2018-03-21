@@ -5,5 +5,6 @@ enum Option {
     LINE,
     RECTANGLE,
     CIRCLE,
-    FILLEDCIRCLE
+    FILLEDCIRCLE,
+    ELLIPSE
 };

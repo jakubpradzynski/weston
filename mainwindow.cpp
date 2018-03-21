@@ -14,12 +14,16 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->rectangleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->circleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->filledCircleButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
+    connect(ui->ellipseButton, SIGNAL(pressed()), ui->myCanvas, SLOT(changeOption()));
     connect(ui->clearButton, SIGNAL(pressed()), ui->myCanvas, SLOT(clearCanvas()));
 
     // Connect spin boxes to methods changing rgb values
     connect(ui->rValueSpinBox, SIGNAL(valueChanged(int)), ui->myCanvas, SLOT(changeBrushRValue(int)));
     connect(ui->gValueSpinBox, SIGNAL(valueChanged(int)), ui->myCanvas, SLOT(changeBrushGValue(int)));
     connect(ui->bValueSpinBox, SIGNAL(valueChanged(int)), ui->myCanvas, SLOT(changeBrushBValue(int)));
+
+    // Connect ellipse slope value horizontal slider to method rotating ellipse
+    connect(ui->ellipseSlopeSlider, SIGNAL(sliderMoved(int)), ui->myCanvas, SLOT(rotateEllipse(int)));
 }
 
 MainWindow::~MainWindow()

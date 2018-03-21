@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -39,9 +40,12 @@ public:
     QSpinBox *rValueSpinBox;
     QSpinBox *gValueSpinBox;
     QSpinBox *bValueSpinBox;
-    QLabel *label;
+    QLabel *brushColorLabel;
     QPushButton *circleButton;
     QPushButton *filledCircleButton;
+    QPushButton *ellipseButton;
+    QLabel *ellipseSlopeLabel;
+    QSlider *ellipseSlopeSlider;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -50,7 +54,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(836, 635);
+        MainWindow->resize(836, 746);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -70,7 +74,7 @@ public:
         rectangleButton->setGeometry(QRect(700, 150, 113, 32));
         clearButton = new QPushButton(centralWidget);
         clearButton->setObjectName(QStringLiteral("clearButton"));
-        clearButton->setGeometry(QRect(700, 270, 113, 32));
+        clearButton->setGeometry(QRect(700, 310, 113, 32));
         rValueSpinBox = new QSpinBox(centralWidget);
         rValueSpinBox->setObjectName(QStringLiteral("rValueSpinBox"));
         rValueSpinBox->setGeometry(QRect(30, 540, 60, 25));
@@ -83,15 +87,28 @@ public:
         bValueSpinBox->setObjectName(QStringLiteral("bValueSpinBox"));
         bValueSpinBox->setGeometry(QRect(170, 540, 60, 25));
         bValueSpinBox->setMaximum(255);
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(240, 543, 141, 16));
+        brushColorLabel = new QLabel(centralWidget);
+        brushColorLabel->setObjectName(QStringLiteral("brushColorLabel"));
+        brushColorLabel->setGeometry(QRect(240, 543, 141, 16));
         circleButton = new QPushButton(centralWidget);
         circleButton->setObjectName(QStringLiteral("circleButton"));
         circleButton->setGeometry(QRect(700, 190, 113, 32));
         filledCircleButton = new QPushButton(centralWidget);
         filledCircleButton->setObjectName(QStringLiteral("filledCircleButton"));
         filledCircleButton->setGeometry(QRect(700, 230, 113, 32));
+        ellipseButton = new QPushButton(centralWidget);
+        ellipseButton->setObjectName(QStringLiteral("ellipseButton"));
+        ellipseButton->setGeometry(QRect(700, 270, 113, 32));
+        ellipseSlopeLabel = new QLabel(centralWidget);
+        ellipseSlopeLabel->setObjectName(QStringLiteral("ellipseSlopeLabel"));
+        ellipseSlopeLabel->setGeometry(QRect(580, 580, 171, 16));
+        ellipseSlopeSlider = new QSlider(centralWidget);
+        ellipseSlopeSlider->setObjectName(QStringLiteral("ellipseSlopeSlider"));
+        ellipseSlopeSlider->setGeometry(QRect(30, 580, 531, 22));
+        ellipseSlopeSlider->setMaximum(360);
+        ellipseSlopeSlider->setValue(0);
+        ellipseSlopeSlider->setSliderPosition(0);
+        ellipseSlopeSlider->setOrientation(Qt::Horizontal);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -117,9 +134,11 @@ public:
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
         rectangleButton->setText(QApplication::translate("MainWindow", "Prostok\304\205t", nullptr));
         clearButton->setText(QApplication::translate("MainWindow", "Wyczy\305\233\304\207", nullptr));
-        label->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 kolor p\304\231dzla", nullptr));
+        brushColorLabel->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 kolor p\304\231dzla", nullptr));
         circleButton->setText(QApplication::translate("MainWindow", "Okr\304\205g", nullptr));
         filledCircleButton->setText(QApplication::translate("MainWindow", "Ko\305\202o", nullptr));
+        ellipseButton->setText(QApplication::translate("MainWindow", "Elipsa", nullptr));
+        ellipseSlopeLabel->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 nachylenie elipsy", nullptr));
     } // retranslateUi
 
 };
