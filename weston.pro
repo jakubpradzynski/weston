@@ -29,13 +29,24 @@ SOURCES += \
     mycanvas.cpp \
     point.cpp \
     rgb.cpp \
-    option.cpp
+    option.cpp \
+    beziercurvewidget.cpp \
+    beziercurvecanvas.cpp \
+    beziercurveoption.cpp \
+    bsplinecurvewidget.cpp \
+    bsplinecurvecanvas.cpp
 
 HEADERS += \
         mainwindow.h \
     mycanvas.h \
     point.h \
-    rgb.h
+    rgb.h \
+    beziercurvewidget.h \
+    beziercurvecanvas.h \
+    bsplinecurvewidget.h \
+    bsplinecurvecanvas.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    beziercurvewidget.ui \
+    bsplinecurvewidget.ui

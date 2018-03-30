@@ -1,12 +1,5 @@
 #include "mycanvas.h"
 
-#include <QPainter>
-#include <QImage>
-#include <QMouseEvent>
-#include <QPushButton>
-
-#include <math.h>
-
 MyCanvas::MyCanvas(QWidget *parent) : QWidget(parent)
 {
     // Setting brush color to black
@@ -57,7 +50,6 @@ void MyCanvas::mouseMoveEvent(QMouseEvent *event)
 void MyCanvas::mousePressEvent(QMouseEvent *event)
 {
     start = Point(event->x(), event->y());
-    qDebug("Press point: (%d, %d)", start.getX(), start.getY());
 
     switch (option) {
     case PENCIL:
@@ -85,7 +77,6 @@ void MyCanvas::mousePressEvent(QMouseEvent *event)
 void MyCanvas::mouseReleaseEvent(QMouseEvent *event)
 {
     end = Point(event->x(), event->y());
-    qDebug("Release point: (%d, %d)", end.getX(), end.getY());
 
     switch (option) {
     case PENCIL:
@@ -152,7 +143,8 @@ void MyCanvas::changeOption()
 void MyCanvas::clearCanvas()
 {
     qImage.fill(Qt::white);
-    repaint();
+    update();
+//    repaint();
 }
 
 // Method's for changing brush color
@@ -217,7 +209,6 @@ void MyCanvas::drawHorizontalLine(Point start, Point end, RGB rgb)
 // Method drawing rectangle using method drawing horizontal line
 void MyCanvas::drawRectangle(Point start, Point end, RGB rgb)
 {
-    qDebug("Drawing rectangle");
     Point first = start, second = end;
     if(start.getX() > end.getX()) {
         first.setX(end.getX());
@@ -235,7 +226,6 @@ void MyCanvas::drawRectangle(Point start, Point end, RGB rgb)
 // Method drawing line using Brasenham's Algorithm
 void MyCanvas::drawLineByBrasenhamsAlgorithm(Point start, Point end, RGB rgb)
 {
-    qDebug("Drawing line using Brasenham's Algorithm");
     Point first = start, second = end;
     if(start.getX() > end.getX()) {
         first.setX(end.getX());
@@ -267,7 +257,6 @@ void MyCanvas::drawLineByBrasenhamsAlgorithm(Point start, Point end, RGB rgb)
 // Method drawing line using linear interpolation
 void MyCanvas::drawLineUsingLinearInterpolation(Point start, Point end, RGB rgb)
 {
-    qDebug("Drawing line using linear interpolation");
     int N = (int)(2 * sqrt(pow(end.getX() - start.getX(), 2) + pow(end.getY() - start.getY(), 2)));
     for (int i = 0; i < N; i++) {
         float a = (float) i / (N - 1);
@@ -280,16 +269,12 @@ void MyCanvas::drawLineUsingLinearInterpolation(Point start, Point end, RGB rgb)
 // Method drawing line using naive algorithm
 void MyCanvas::drawLineUsingNaiveAlgorithm(Point start, Point end, RGB rgb)
 {
-    qDebug("Drawing line using naive algorithm");
     if(start == end) {
-        qDebug("Start point == end point");
         putPixel(start, rgb);
         return;
     }
     float dx = (float) end.getX() - start.getX();
     float dy = (float) end.getY() - start.getY();
-    qDebug("Start: (%d, %d), End: (%d, %d)", start.getX(), start.getY(), end.getX(), end.getY());
-    qDebug("dx = %f .... dy = %f", dx, dy);
     if (abs(dx) >= abs(dy)) {
         if(start.getX() > end.getX()) {
             Point tmp = start;
@@ -316,9 +301,6 @@ void MyCanvas::drawLineUsingNaiveAlgorithm(Point start, Point end, RGB rgb)
 // Method drawing empty circle
 void MyCanvas::drawCircle(Point center, int radius, RGB rgb)
 {
-    qDebug("Drawing circle");
-    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
-    qDebug("Radius = %d", radius);
     for(int y = 0; y <= radius / sqrt(2); y++) {
         int x = sqrt(pow(radius, 2) - pow(y, 2));
         putPixel(Point(x + center.getX(), y + center.getY()), rgb);
@@ -343,9 +325,6 @@ int MyCanvas::calculateRadius(Point start, Point end)
 // Method drawing filled circle
 void MyCanvas::drawFilledCircle(Point center, int radius, RGB rgb)
 {
-    qDebug("Drawing filled circle");
-    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
-    qDebug("Radius = %d", radius);
     for(int y = 0; y <= radius; y++) {
         int x = sqrt(pow(radius, 2) - pow(y, 2));
         drawHorizontalLine(Point(-x + center.getX(), y + center.getY()), Point(x + center.getX(), y + center.getY()), rgb);
@@ -356,9 +335,6 @@ void MyCanvas::drawFilledCircle(Point center, int radius, RGB rgb)
 // Method draw circle using parametric circle equation
 void MyCanvas::drawCircleUsingParametricCircleEquation(Point center, int radius, RGB rgb)
 {
-    qDebug("Drawing circle using parametric circle equation");
-    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
-    qDebug("Radius = %d", radius);
     int N = 64;
     int i = 0;
     Point p1, p2;
@@ -377,10 +353,6 @@ void MyCanvas::drawCircleUsingParametricCircleEquation(Point center, int radius,
 // Method draw ellipse
 void MyCanvas::drawEllipse(Point center, int firstRadius, int secondRadius, RGB rgb)
 {
-    qDebug("Drawing ellipse");
-    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
-    qDebug("First radius = %d", firstRadius);
-    qDebug("Second radius = %d", secondRadius);
     int N = 64;
     int i = 0;
     Point p1, p2;
@@ -417,11 +389,6 @@ int MyCanvas::calculateSecondRadiusForEllipse(Point start, Point end)
 // Method draw ellipse with slope
 void MyCanvas::drawEllipseWithSlope(Point center, int firstRadius, int secondRadius, int slope, RGB rgb)
 {
-    qDebug("Drawing ellipse with slope");
-    qDebug("Center point = (%d, %d)", center.getX(), center.getY());
-    qDebug("First radius = %d", firstRadius);
-    qDebug("Second radius = %d", secondRadius);
-    qDebug("Slope = %d", slope);
     int N = 64;
     int i = 0;
     Point p1, p2;

@@ -24,9 +24,34 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Connect ellipse slope value horizontal slider to method rotating ellipse
     connect(ui->ellipseSlopeSlider, SIGNAL(sliderMoved(int)), ui->myCanvas, SLOT(rotateEllipse(int)));
+
+    // Connect button to open Bezier Curve Widget window
+    connect(ui->bezierCurveButton, SIGNAL(pressed()), this, SLOT(openBezierCurveWidget()));
+    connect(ui->bezierCurveAction, SIGNAL(triggered(bool)), this, SLOT(openBezierCurveWidget()));
+
+    // Connect button to open Bezier Curve Widget window
+    connect(ui->bSplineCurveButton, SIGNAL(pressed()), this, SLOT(openBSplineCurveWidget()));
+    connect(ui->bSplineCurveAction, SIGNAL(triggered(bool)), this, SLOT(openBSplineCurveWidget()));
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+// Method open new window with Bezier Curve Widget
+void MainWindow::openBezierCurveWidget()
+{
+    bezierCurveWidget = new BezierCurveWidget();
+    bezierCurveWidget->show();
+    bezierCurveWidget->setWindowTitle("Krzywe Beziera");
+}
+
+// Method open new window with B-spline Curve Widget
+void MainWindow::openBSplineCurveWidget()
+{
+    bSplineCurveWidget = new BSplineCurveWidget();
+    bSplineCurveWidget->show();
+    bSplineCurveWidget->setWindowTitle("Krzywe B-sklejane");
 }

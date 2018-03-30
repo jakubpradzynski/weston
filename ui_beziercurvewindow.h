@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'beziercurvewindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.10.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_BEZIERCURVEWINDOW_H
+#define UI_BEZIERCURVEWINDOW_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -16,7 +16,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
@@ -28,11 +27,9 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
+class Ui_BezierCurveWidget
 {
 public:
-    QAction *bezierCurveAction;
-    QAction *bSplineCurveAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -50,22 +47,16 @@ public:
     QLabel *ellipseSlopeLabel;
     QSlider *ellipseSlopeSlider;
     QPushButton *bezierCurveButton;
-    QPushButton *bSplineCurveButton;
     QMenuBar *menuBar;
-    QMenu *curveMenu;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *MainWindow)
+    void setupUi(QMainWindow *BezierCurveWidget)
     {
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(850, 750);
-        bezierCurveAction = new QAction(MainWindow);
-        bezierCurveAction->setObjectName(QStringLiteral("bezierCurveAction"));
-        bSplineCurveAction = new QAction(MainWindow);
-        bSplineCurveAction->setObjectName(QStringLiteral("bSplineCurveAction"));
-        centralWidget = new QWidget(MainWindow);
+        if (BezierCurveWidget->objectName().isEmpty())
+            BezierCurveWidget->setObjectName(QStringLiteral("BezierCurveWidget"));
+        BezierCurveWidget->resize(836, 746);
+        centralWidget = new QWidget(BezierCurveWidget);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
         myCanvas->setObjectName(QStringLiteral("myCanvas"));
@@ -121,59 +112,46 @@ public:
         ellipseSlopeSlider->setOrientation(Qt::Horizontal);
         bezierCurveButton = new QPushButton(centralWidget);
         bezierCurveButton->setObjectName(QStringLiteral("bezierCurveButton"));
-        bezierCurveButton->setGeometry(QRect(30, 620, 141, 32));
-        bSplineCurveButton = new QPushButton(centralWidget);
-        bSplineCurveButton->setObjectName(QStringLiteral("bSplineCurveButton"));
-        bSplineCurveButton->setGeometry(QRect(180, 620, 151, 32));
-        MainWindow->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(MainWindow);
+        bezierCurveButton->setGeometry(QRect(692, 410, 121, 32));
+        BezierCurveWidget->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(BezierCurveWidget);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 850, 22));
-        curveMenu = new QMenu(menuBar);
-        curveMenu->setObjectName(QStringLiteral("curveMenu"));
-        MainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MainWindow);
+        menuBar->setGeometry(QRect(0, 0, 836, 22));
+        BezierCurveWidget->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(BezierCurveWidget);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
+        BezierCurveWidget->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(BezierCurveWidget);
         statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
+        BezierCurveWidget->setStatusBar(statusBar);
 
-        menuBar->addAction(curveMenu->menuAction());
-        curveMenu->addAction(bezierCurveAction);
-        curveMenu->addAction(bSplineCurveAction);
+        retranslateUi(BezierCurveWidget);
 
-        retranslateUi(MainWindow);
-
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(BezierCurveWidget);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *BezierCurveWidget)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        bezierCurveAction->setText(QApplication::translate("MainWindow", "Beziera", nullptr));
-        bSplineCurveAction->setText(QApplication::translate("MainWindow", "B-sklejone", nullptr));
-        pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
-        sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
-        lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
-        rectangleButton->setText(QApplication::translate("MainWindow", "Prostok\304\205t", nullptr));
-        clearButton->setText(QApplication::translate("MainWindow", "Wyczy\305\233\304\207", nullptr));
-        brushColorLabel->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 kolor p\304\231dzla", nullptr));
-        circleButton->setText(QApplication::translate("MainWindow", "Okr\304\205g", nullptr));
-        filledCircleButton->setText(QApplication::translate("MainWindow", "Ko\305\202o", nullptr));
-        ellipseButton->setText(QApplication::translate("MainWindow", "Elipsa", nullptr));
-        ellipseSlopeLabel->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 nachylenie elipsy", nullptr));
-        bezierCurveButton->setText(QApplication::translate("MainWindow", "Krzywe Beziera", nullptr));
-        bSplineCurveButton->setText(QApplication::translate("MainWindow", "Krzywe B-sklejane", nullptr));
-        curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
+        BezierCurveWidget->setWindowTitle(QApplication::translate("BezierCurveWidget", "MainWindow", nullptr));
+        pencilButton->setText(QApplication::translate("BezierCurveWidget", "O\305\202\303\263wek", nullptr));
+        sprayButton->setText(QApplication::translate("BezierCurveWidget", "Spray", nullptr));
+        lineButton->setText(QApplication::translate("BezierCurveWidget", "Linia", nullptr));
+        rectangleButton->setText(QApplication::translate("BezierCurveWidget", "Prostok\304\205t", nullptr));
+        clearButton->setText(QApplication::translate("BezierCurveWidget", "Wyczy\305\233\304\207", nullptr));
+        brushColorLabel->setText(QApplication::translate("BezierCurveWidget", "<- Zmie\305\204 kolor p\304\231dzla", nullptr));
+        circleButton->setText(QApplication::translate("BezierCurveWidget", "Okr\304\205g", nullptr));
+        filledCircleButton->setText(QApplication::translate("BezierCurveWidget", "Ko\305\202o", nullptr));
+        ellipseButton->setText(QApplication::translate("BezierCurveWidget", "Elipsa", nullptr));
+        ellipseSlopeLabel->setText(QApplication::translate("BezierCurveWidget", "<- Zmie\305\204 nachylenie elipsy", nullptr));
+        bezierCurveButton->setText(QApplication::translate("BezierCurveWidget", "Krzywe Beziera", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class BezierCurveWidget: public Ui_BezierCurveWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_BEZIERCURVEWINDOW_H

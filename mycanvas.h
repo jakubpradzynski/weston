@@ -4,7 +4,11 @@
 #include "point.h"
 #include "rgb.h"
 #include "option.cpp"
-
+#include <QPainter>
+#include <QImage>
+#include <QMouseEvent>
+#include <QPushButton>
+#include <math.h>
 #include <QWidget>
 
 class MyCanvas : public QWidget
