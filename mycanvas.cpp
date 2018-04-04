@@ -68,6 +68,9 @@ void MyCanvas::mousePressEvent(QMouseEvent *event)
         break;
     case ELLIPSE:
         break;
+    case FLOOD_FILL:
+        floodFillStack(start, brushRGB);
+        break;
     default:
         break;
     }
@@ -134,6 +137,9 @@ void MyCanvas::changeOption()
     } else if(buttonName == "ellipseButton") {
         option = ELLIPSE;
         qDebug("Option changed to %i - ELLIPSE", option);
+    } else if(buttonName == "floodFillButton") {
+        option = FLOOD_FILL;
+        qDebug("Option changed to %i - FLOOD_FILL", option);
     }  else {
         qDebug("WRONG BUTTTON!");
     }
@@ -404,6 +410,34 @@ void MyCanvas::drawEllipseWithSlope(Point center, int firstRadius, int secondRad
         Point p2WithSlope = Point(p2.getX() * cos(beta) - p2.getY() * sin(beta)  + center.getX(), p2.getX() * sin(beta) + p2.getY() * cos(beta) + center.getY());
         drawLineUsingNaiveAlgorithm(p1WithSlope, p2WithSlope, rgb);
         p1WithSlope = p2WithSlope;
+    }
+}
+
+RGB MyCanvas::getPointColor(Point point)
+{
+    int r, g, b;
+    QColor qColor = qImage.pixel(point.getX(), point.getY());
+    qColor.getRgb(&r, &g, &b);
+    return RGB(r, g, b);
+}
+
+void MyCanvas::floodFillStack(Point point, RGB color)
+{
+    RGB bgColor = getPointColor(point);
+    if (bgColor == color) return;
+    std::stack<Point> points;
+    points.push(point);
+    while(!points.empty()) {
+        Point p = points.top();
+        points.pop();
+        if (p.getX() < 0 || p.getY() < 0 || p.getX() >= canvasSize.width() || p.getY() >= canvasSize.height()) continue;
+        if (getPointColor(p) == bgColor) {
+            putPixel(p, color);
+            points.push(Point(p.getX() + 1, p.getY()));
+            points.push(Point(p.getX() - 1, p.getY()));
+            points.push(Point(p.getX(), p.getY() + 1));
+            points.push(Point(p.getX(), p.getY() - 1));
+        }
     }
 }
 

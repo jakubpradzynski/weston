@@ -10,6 +10,7 @@
 #include <QPushButton>
 #include <math.h>
 #include <QWidget>
+#include <stack>
 
 class MyCanvas : public QWidget
 {
@@ -57,7 +58,8 @@ private:
     int calculateFirstRadiusForEllipse(Point start, Point end); // Calculate first, horizontal radius for ellipse
     int calculateSecondRadiusForEllipse(Point start, Point end); // Calculate first, vertical radius for ellipse
     void drawEllipseWithSlope(Point center, int firstRadius, int secondRadius, int slope, RGB rgb); // Draw ellipse with slope
-
+    RGB getPointColor(Point point);
+    void floodFillStack(Point point, RGB color);
 };
 
 #endif // MYCANVAS_H

@@ -56,6 +56,18 @@ void RGB::operator =(RGB rgb)
     this->b = rgb.getB();
 }
 
+bool RGB::operator ==(RGB rgb)
+{
+    if (this->getR() != rgb.getR() || this->getG() != rgb.getG() || this->getB() != rgb.getB()) return false;
+    return true;
+}
+
+bool RGB::operator !=(RGB rgb)
+{
+    if (this->getR() == rgb.getR() && this->getG() == rgb.getG() && this->getB() == rgb.getB()) return false;
+    return true;
+}
+
 // Destructors
 RGB::~RGB()
 {

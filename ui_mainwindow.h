@@ -51,6 +51,7 @@ public:
     QSlider *ellipseSlopeSlider;
     QPushButton *bezierCurveButton;
     QPushButton *bSplineCurveButton;
+    QPushButton *floodFillButton;
     QMenuBar *menuBar;
     QMenu *curveMenu;
     QToolBar *mainToolBar;
@@ -84,7 +85,7 @@ public:
         rectangleButton->setGeometry(QRect(700, 150, 113, 32));
         clearButton = new QPushButton(centralWidget);
         clearButton->setObjectName(QStringLiteral("clearButton"));
-        clearButton->setGeometry(QRect(700, 310, 113, 32));
+        clearButton->setGeometry(QRect(700, 350, 113, 32));
         rValueSpinBox = new QSpinBox(centralWidget);
         rValueSpinBox->setObjectName(QStringLiteral("rValueSpinBox"));
         rValueSpinBox->setGeometry(QRect(30, 540, 60, 25));
@@ -125,6 +126,9 @@ public:
         bSplineCurveButton = new QPushButton(centralWidget);
         bSplineCurveButton->setObjectName(QStringLiteral("bSplineCurveButton"));
         bSplineCurveButton->setGeometry(QRect(180, 620, 151, 32));
+        floodFillButton = new QPushButton(centralWidget);
+        floodFillButton->setObjectName(QStringLiteral("floodFillButton"));
+        floodFillButton->setGeometry(QRect(700, 310, 113, 32));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -165,6 +169,7 @@ public:
         ellipseSlopeLabel->setText(QApplication::translate("MainWindow", "<- Zmie\305\204 nachylenie elipsy", nullptr));
         bezierCurveButton->setText(QApplication::translate("MainWindow", "Krzywe Beziera", nullptr));
         bSplineCurveButton->setText(QApplication::translate("MainWindow", "Krzywe B-sklejane", nullptr));
+        floodFillButton->setText(QApplication::translate("MainWindow", "Wype\305\202nij", nullptr));
         curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
     } // retranslateUi
 

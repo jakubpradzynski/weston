@@ -22,6 +22,8 @@ public:
     int getB();
     // Operator overload
     void operator =(RGB rgb);
+    bool operator ==(RGB rgb);
+    bool operator !=(RGB rgb);
     // Destructor
     ~RGB();
 };

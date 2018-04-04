@@ -6,5 +6,6 @@ enum Option {
     RECTANGLE,
     CIRCLE,
     FILLEDCIRCLE,
-    ELLIPSE
+    ELLIPSE,
+    FLOOD_FILL
 };
