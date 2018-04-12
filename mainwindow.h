@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "beziercurvewidget.h"
 #include "bsplinecurvewidget.h"
+#include "scanelinewidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,11 +21,13 @@ public:
 public slots:
     void openBezierCurveWidget(); // Method open new window with Bezier Curve Widget
     void openBSplineCurveWidget(); // Method open new window with B-spline Curve Widget
+    void openScaneLineWidget(); // Method open new window with ScaneLine algorithm
 
 private:
     Ui::MainWindow *ui;
     BezierCurveWidget *bezierCurveWidget; // Bezier Curve Widget window
     BSplineCurveWidget *bSplineCurveWidget; // B-spline Curve Widget window
+    ScaneLineWidget *scaneLineWidget; // ScaneLine Widget window
 };
 
 #endif // MAINWINDOW_H

@@ -413,6 +413,7 @@ void MyCanvas::drawEllipseWithSlope(Point center, int firstRadius, int secondRad
     }
 }
 
+// Return point color
 RGB MyCanvas::getPointColor(Point point)
 {
     int r, g, b;
@@ -421,6 +422,7 @@ RGB MyCanvas::getPointColor(Point point)
     return RGB(r, g, b);
 }
 
+// Flood fill algorithm
 void MyCanvas::floodFillStack(Point point, RGB color)
 {
     RGB bgColor = getPointColor(point);

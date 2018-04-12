@@ -15,7 +15,7 @@ BezierCurveWidget::BezierCurveWidget(QWidget *parent) :
     // Connect clear button to method clearing canvas and pointsVector
     connect(ui->clearButton, SIGNAL(pressed()), ui->bezierCurveCanvas, SLOT(clearCanvasAndPoints()));
 
-    // Connecto spin box to method changing point size
+    // Connect spin box to method changing point size
     connect(ui->pointSizeSpinBox, SIGNAL(valueChanged(int)), ui->bezierCurveCanvas, SLOT(changePointSize(int)));
 }
 

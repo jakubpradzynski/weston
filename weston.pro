@@ -34,7 +34,9 @@ SOURCES += \
     beziercurvecanvas.cpp \
     beziercurveoption.cpp \
     bsplinecurvewidget.cpp \
-    bsplinecurvecanvas.cpp
+    bsplinecurvecanvas.cpp \
+    scanelinewidget.cpp \
+    scanelinecanvas.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,9 +46,12 @@ HEADERS += \
     beziercurvewidget.h \
     beziercurvecanvas.h \
     bsplinecurvewidget.h \
-    bsplinecurvecanvas.h
+    bsplinecurvecanvas.h \
+    scanelinewidget.h \
+    scanelinecanvas.h
 
 FORMS += \
         mainwindow.ui \
     beziercurvewidget.ui \
-    bsplinecurvewidget.ui
+    bsplinecurvewidget.ui \
+    scanelinewidget.ui

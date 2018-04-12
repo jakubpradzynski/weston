@@ -58,8 +58,8 @@ private:
     int calculateFirstRadiusForEllipse(Point start, Point end); // Calculate first, horizontal radius for ellipse
     int calculateSecondRadiusForEllipse(Point start, Point end); // Calculate first, vertical radius for ellipse
     void drawEllipseWithSlope(Point center, int firstRadius, int secondRadius, int slope, RGB rgb); // Draw ellipse with slope
-    RGB getPointColor(Point point);
-    void floodFillStack(Point point, RGB color);
+    RGB getPointColor(Point point); // Return point color
+    void floodFillStack(Point point, RGB color); // Flood fill algorithm
 };
 
 #endif // MYCANVAS_H

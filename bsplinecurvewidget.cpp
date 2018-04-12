@@ -15,7 +15,7 @@ BSplineCurveWidget::BSplineCurveWidget(QWidget *parent) :
     // Connect clear button to method clearing canvas and pointsVector
     connect(ui->clearButton, SIGNAL(pressed()), ui->bSplineCurveCanvas, SLOT(clearCanvasAndPoints()));
 
-    // Connecto spin box to method changing point size
+    // Connect spin box to method changing point size
     connect(ui->pointSizeSpinBox, SIGNAL(valueChanged(int)), ui->bSplineCurveCanvas, SLOT(changePointSize(int)));
 
 }

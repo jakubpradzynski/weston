@@ -33,6 +33,7 @@ class Ui_MainWindow
 public:
     QAction *bezierCurveAction;
     QAction *bSplineCurveAction;
+    QAction *scaneLineAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -52,8 +53,10 @@ public:
     QPushButton *bezierCurveButton;
     QPushButton *bSplineCurveButton;
     QPushButton *floodFillButton;
+    QPushButton *scaneLineButton;
     QMenuBar *menuBar;
     QMenu *curveMenu;
+    QMenu *menuScaneLine;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -66,6 +69,8 @@ public:
         bezierCurveAction->setObjectName(QStringLiteral("bezierCurveAction"));
         bSplineCurveAction = new QAction(MainWindow);
         bSplineCurveAction->setObjectName(QStringLiteral("bSplineCurveAction"));
+        scaneLineAction = new QAction(MainWindow);
+        scaneLineAction->setObjectName(QStringLiteral("scaneLineAction"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -129,12 +134,17 @@ public:
         floodFillButton = new QPushButton(centralWidget);
         floodFillButton->setObjectName(QStringLiteral("floodFillButton"));
         floodFillButton->setGeometry(QRect(700, 310, 113, 32));
+        scaneLineButton = new QPushButton(centralWidget);
+        scaneLineButton->setObjectName(QStringLiteral("scaneLineButton"));
+        scaneLineButton->setGeometry(QRect(350, 620, 113, 32));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 850, 22));
         curveMenu = new QMenu(menuBar);
         curveMenu->setObjectName(QStringLiteral("curveMenu"));
+        menuScaneLine = new QMenu(menuBar);
+        menuScaneLine->setObjectName(QStringLiteral("menuScaneLine"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -144,8 +154,10 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(curveMenu->menuAction());
+        menuBar->addAction(menuScaneLine->menuAction());
         curveMenu->addAction(bezierCurveAction);
         curveMenu->addAction(bSplineCurveAction);
+        menuScaneLine->addAction(scaneLineAction);
 
         retranslateUi(MainWindow);
 
@@ -157,6 +169,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         bezierCurveAction->setText(QApplication::translate("MainWindow", "Beziera", nullptr));
         bSplineCurveAction->setText(QApplication::translate("MainWindow", "B-sklejone", nullptr));
+        scaneLineAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
         sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
@@ -170,7 +183,9 @@ public:
         bezierCurveButton->setText(QApplication::translate("MainWindow", "Krzywe Beziera", nullptr));
         bSplineCurveButton->setText(QApplication::translate("MainWindow", "Krzywe B-sklejane", nullptr));
         floodFillButton->setText(QApplication::translate("MainWindow", "Wype\305\202nij", nullptr));
+        scaneLineButton->setText(QApplication::translate("MainWindow", "ScanLine", nullptr));
         curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
+        menuScaneLine->setTitle(QApplication::translate("MainWindow", "ScanLine", nullptr));
     } // retranslateUi
 
 };

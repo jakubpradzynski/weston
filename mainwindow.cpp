@@ -34,6 +34,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->bSplineCurveButton, SIGNAL(pressed()), this, SLOT(openBSplineCurveWidget()));
     connect(ui->bSplineCurveAction, SIGNAL(triggered(bool)), this, SLOT(openBSplineCurveWidget()));
 
+    // Connect button to open ScaneLine window
+    connect(ui->scaneLineButton, SIGNAL(pressed()), this, SLOT(openScaneLineWidget()));
+    connect(ui->scaneLineAction, SIGNAL(triggered(bool)), this, SLOT(openScaneLineWidget()));
+
 }
 
 MainWindow::~MainWindow()
@@ -55,4 +59,12 @@ void MainWindow::openBSplineCurveWidget()
     bSplineCurveWidget = new BSplineCurveWidget();
     bSplineCurveWidget->show();
     bSplineCurveWidget->setWindowTitle("Krzywe B-sklejane");
+}
+
+// Method open new window with Scan line Widget
+void MainWindow::openScaneLineWidget()
+{
+    scaneLineWidget = new ScaneLineWidget();
+    scaneLineWidget->show();
+    scaneLineWidget->setWindowTitle("ScaneLine");
 }
