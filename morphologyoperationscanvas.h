@@ -28,12 +28,12 @@ public slots:
     void clearCanvas();
 
 private:
-    QSize canvasSize = QSize(650, 500); // Setting canvas size
-    QImage qImage; // Place to draw
+    QSize canvasSize = QSize(650, 500);
+    QImage qImage;
     QImage painting = QImage("/Users/jakub.pradzynski/Prywatne/Nauka/LGiM/weston/sth.png");
     int kernelSize = 1;
     void repaintFromOneQImageToSecond(QImage *first, QImage *second);
-    void putPixel(Point point, RGB rgb);// Method draw single pixel
+    void putPixel(Point point, RGB rgb);
     void putPixel(QImage *qImage, Point point, RGB rgb);
     RGB getPointColor(Point point);
     RGB getPointColor(QImage *qImage, Point point);
