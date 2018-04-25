@@ -64,8 +64,8 @@ bool RGB::operator ==(RGB rgb)
 
 bool RGB::operator !=(RGB rgb)
 {
-    if (this->getR() == rgb.getR() && this->getG() == rgb.getG() && this->getB() == rgb.getB()) return false;
-    return true;
+    if (this->getR() != rgb.getR() || this->getG() != rgb.getG() || this->getB() != rgb.getB()) return true;
+    return false;
 }
 
 // Destructors

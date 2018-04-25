@@ -38,6 +38,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->scaneLineButton, SIGNAL(pressed()), this, SLOT(openScaneLineWidget()));
     connect(ui->scaneLineAction, SIGNAL(triggered(bool)), this, SLOT(openScaneLineWidget()));
 
+    connect(ui->morphologyOperationsButton, SIGNAL(pressed()), this, SLOT(openMorphologyOperationsWidget()));
+    connect(ui->morphologyOperationsAction, SIGNAL(triggered(bool)), this, SLOT(openMorphologyOperationsWidget()));
+
 }
 
 MainWindow::~MainWindow()
@@ -67,4 +70,11 @@ void MainWindow::openScaneLineWidget()
     scaneLineWidget = new ScaneLineWidget();
     scaneLineWidget->show();
     scaneLineWidget->setWindowTitle("ScaneLine");
+}
+
+void MainWindow::openMorphologyOperationsWidget()
+{
+    morphologyOperationsWidget = new MorphologyOperationsWidget();
+    morphologyOperationsWidget->show();
+    morphologyOperationsWidget->setWindowTitle("Operacje morfologiczne");
 }

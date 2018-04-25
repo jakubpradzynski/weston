@@ -34,6 +34,7 @@ public:
     QAction *bezierCurveAction;
     QAction *bSplineCurveAction;
     QAction *scaneLineAction;
+    QAction *morphologyOperationsAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -54,9 +55,11 @@ public:
     QPushButton *bSplineCurveButton;
     QPushButton *floodFillButton;
     QPushButton *scaneLineButton;
+    QPushButton *morphologyOperationsButton;
     QMenuBar *menuBar;
     QMenu *curveMenu;
     QMenu *menuScaneLine;
+    QMenu *menuOperacje_morfologiczne;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -71,6 +74,8 @@ public:
         bSplineCurveAction->setObjectName(QStringLiteral("bSplineCurveAction"));
         scaneLineAction = new QAction(MainWindow);
         scaneLineAction->setObjectName(QStringLiteral("scaneLineAction"));
+        morphologyOperationsAction = new QAction(MainWindow);
+        morphologyOperationsAction->setObjectName(QStringLiteral("morphologyOperationsAction"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -136,7 +141,10 @@ public:
         floodFillButton->setGeometry(QRect(700, 310, 113, 32));
         scaneLineButton = new QPushButton(centralWidget);
         scaneLineButton->setObjectName(QStringLiteral("scaneLineButton"));
-        scaneLineButton->setGeometry(QRect(350, 620, 113, 32));
+        scaneLineButton->setGeometry(QRect(340, 620, 113, 32));
+        morphologyOperationsButton = new QPushButton(centralWidget);
+        morphologyOperationsButton->setObjectName(QStringLiteral("morphologyOperationsButton"));
+        morphologyOperationsButton->setGeometry(QRect(460, 620, 181, 32));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -145,6 +153,8 @@ public:
         curveMenu->setObjectName(QStringLiteral("curveMenu"));
         menuScaneLine = new QMenu(menuBar);
         menuScaneLine->setObjectName(QStringLiteral("menuScaneLine"));
+        menuOperacje_morfologiczne = new QMenu(menuBar);
+        menuOperacje_morfologiczne->setObjectName(QStringLiteral("menuOperacje_morfologiczne"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -155,9 +165,11 @@ public:
 
         menuBar->addAction(curveMenu->menuAction());
         menuBar->addAction(menuScaneLine->menuAction());
+        menuBar->addAction(menuOperacje_morfologiczne->menuAction());
         curveMenu->addAction(bezierCurveAction);
         curveMenu->addAction(bSplineCurveAction);
         menuScaneLine->addAction(scaneLineAction);
+        menuOperacje_morfologiczne->addAction(morphologyOperationsAction);
 
         retranslateUi(MainWindow);
 
@@ -170,6 +182,7 @@ public:
         bezierCurveAction->setText(QApplication::translate("MainWindow", "Beziera", nullptr));
         bSplineCurveAction->setText(QApplication::translate("MainWindow", "B-sklejone", nullptr));
         scaneLineAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
+        morphologyOperationsAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
         sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
@@ -184,8 +197,10 @@ public:
         bSplineCurveButton->setText(QApplication::translate("MainWindow", "Krzywe B-sklejane", nullptr));
         floodFillButton->setText(QApplication::translate("MainWindow", "Wype\305\202nij", nullptr));
         scaneLineButton->setText(QApplication::translate("MainWindow", "ScanLine", nullptr));
+        morphologyOperationsButton->setText(QApplication::translate("MainWindow", "Operacje morfologiczne", nullptr));
         curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
         menuScaneLine->setTitle(QApplication::translate("MainWindow", "ScanLine", nullptr));
+        menuOperacje_morfologiczne->setTitle(QApplication::translate("MainWindow", "Operacje morfologiczne", nullptr));
     } // retranslateUi
 
 };

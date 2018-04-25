@@ -36,7 +36,9 @@ SOURCES += \
     bsplinecurvewidget.cpp \
     bsplinecurvecanvas.cpp \
     scanelinewidget.cpp \
-    scanelinecanvas.cpp
+    scanelinecanvas.cpp \
+    morphologyoperationswidget.cpp \
+    morphologyoperationscanvas.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,10 +50,13 @@ HEADERS += \
     bsplinecurvewidget.h \
     bsplinecurvecanvas.h \
     scanelinewidget.h \
-    scanelinecanvas.h
+    scanelinecanvas.h \
+    morphologyoperationswidget.h \
+    morphologyoperationscanvas.h
 
 FORMS += \
         mainwindow.ui \
     beziercurvewidget.ui \
     bsplinecurvewidget.ui \
-    scanelinewidget.ui
+    scanelinewidget.ui \
+    morphologyoperationswidget.ui
