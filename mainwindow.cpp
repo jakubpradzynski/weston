@@ -41,6 +41,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->morphologyOperationsButton, SIGNAL(pressed()), this, SLOT(openMorphologyOperationsWidget()));
     connect(ui->morphologyOperationsAction, SIGNAL(triggered(bool)), this, SLOT(openMorphologyOperationsWidget()));
 
+    connect(ui->colorModelsButton, SIGNAL(pressed()), this, SLOT(openColorModelsWidget()));
+    connect(ui->colorModelsAction, SIGNAL(triggered(bool)), this, SLOT(openColorModelsWidget()));
+
 }
 
 MainWindow::~MainWindow()
@@ -77,4 +80,11 @@ void MainWindow::openMorphologyOperationsWidget()
     morphologyOperationsWidget = new MorphologyOperationsWidget();
     morphologyOperationsWidget->show();
     morphologyOperationsWidget->setWindowTitle("Operacje morfologiczne");
+}
+
+void MainWindow::openColorModelsWidget()
+{
+    colorModelsWidget = new ColorModelsWidget();
+    colorModelsWidget->show();
+    colorModelsWidget->setWindowTitle("Modele barw");
 }

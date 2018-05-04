@@ -6,6 +6,7 @@
 #include "bsplinecurvewidget.h"
 #include "scanelinewidget.h"
 #include "morphologyoperationswidget.h"
+#include "colormodelswidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,7 @@ public slots:
     void openBSplineCurveWidget(); // Method open new window with B-spline Curve Widget
     void openScaneLineWidget(); // Method open new window with ScaneLine algorithm
     void openMorphologyOperationsWidget();
+    void openColorModelsWidget();
 
 private:
     Ui::MainWindow *ui;
@@ -31,6 +33,7 @@ private:
     BSplineCurveWidget *bSplineCurveWidget; // B-spline Curve Widget window
     ScaneLineWidget *scaneLineWidget; // ScaneLine Widget window
     MorphologyOperationsWidget *morphologyOperationsWidget;
+    ColorModelsWidget *colorModelsWidget;
 };
 
 #endif // MAINWINDOW_H

@@ -1,6 +1,8 @@
 #ifndef RGB_H
 #define RGB_H
 
+#include <math.h>
+
 /* Class representing RGB color values */
 class RGB
 {

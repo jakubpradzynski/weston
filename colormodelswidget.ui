@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ColorModelsWidget</class>
+ <widget class="QWidget" name="ColorModelsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>993</width>
+    <height>615</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="ColorModelCanvas" name="colorModelCanvas" native="true">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>50</y>
+     <width>421</width>
+     <height>331</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSlider" name="rValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>70</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>50</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość R</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>100</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość G</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="gValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>120</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>150</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość B</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="bValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>170</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>220</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość H</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>240</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>359</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>270</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość S</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="sValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>290</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vLabel">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>320</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wartość V</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="vValueSlider">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>340</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>50</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>100</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>150</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>220</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>270</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vValue">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>320</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ColorModelCanvas</class>
+   <extends>QWidget</extends>
+   <header>colormodelcanvas.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

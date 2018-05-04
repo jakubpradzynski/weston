@@ -280,6 +280,19 @@
      <string>Operacje morfologiczne</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="colorModelsButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>620</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Modele barw</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -287,7 +300,7 @@
      <x>0</x>
      <y>0</y>
      <width>850</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="curveMenu">
@@ -309,9 +322,16 @@
     </property>
     <addaction name="morphologyOperationsAction"/>
    </widget>
+   <widget class="QMenu" name="menuModele_barw">
+    <property name="title">
+     <string>Modele barw</string>
+    </property>
+    <addaction name="colorModelsAction"/>
+   </widget>
    <addaction name="curveMenu"/>
    <addaction name="menuScaneLine"/>
    <addaction name="menuOperacje_morfologiczne"/>
+   <addaction name="menuModele_barw"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -338,6 +358,11 @@
    </property>
   </action>
   <action name="morphologyOperationsAction">
+   <property name="text">
+    <string>Uruchom</string>
+   </property>
+  </action>
+  <action name="colorModelsAction">
    <property name="text">
     <string>Uruchom</string>
    </property>

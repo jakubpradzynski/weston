@@ -38,7 +38,10 @@ SOURCES += \
     scanelinewidget.cpp \
     scanelinecanvas.cpp \
     morphologyoperationswidget.cpp \
-    morphologyoperationscanvas.cpp
+    morphologyoperationscanvas.cpp \
+    colormodelswidget.cpp \
+    colormodelcanvas.cpp \
+    hsv.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,11 +55,15 @@ HEADERS += \
     scanelinewidget.h \
     scanelinecanvas.h \
     morphologyoperationswidget.h \
-    morphologyoperationscanvas.h
+    morphologyoperationscanvas.h \
+    colormodelswidget.h \
+    colormodelcanvas.h \
+    hsv.h
 
 FORMS += \
         mainwindow.ui \
     beziercurvewidget.ui \
     bsplinecurvewidget.ui \
     scanelinewidget.ui \
-    morphologyoperationswidget.ui
+    morphologyoperationswidget.ui \
+    colormodelswidget.ui
