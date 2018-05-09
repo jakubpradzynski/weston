@@ -36,6 +36,7 @@ public:
     QAction *scaneLineAction;
     QAction *morphologyOperationsAction;
     QAction *colorModelsAction;
+    QAction *imageColorModelAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -81,6 +82,8 @@ public:
         morphologyOperationsAction->setObjectName(QStringLiteral("morphologyOperationsAction"));
         colorModelsAction = new QAction(MainWindow);
         colorModelsAction->setObjectName(QStringLiteral("colorModelsAction"));
+        imageColorModelAction = new QAction(MainWindow);
+        imageColorModelAction->setObjectName(QStringLiteral("imageColorModelAction"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -182,6 +185,7 @@ public:
         menuScaneLine->addAction(scaneLineAction);
         menuOperacje_morfologiczne->addAction(morphologyOperationsAction);
         menuModele_barw->addAction(colorModelsAction);
+        menuModele_barw->addAction(imageColorModelAction);
 
         retranslateUi(MainWindow);
 
@@ -196,6 +200,7 @@ public:
         scaneLineAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         morphologyOperationsAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         colorModelsAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
+        imageColorModelAction->setText(QApplication::translate("MainWindow", "Na obrazku", nullptr));
         pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
         sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));

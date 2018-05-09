@@ -41,7 +41,9 @@ SOURCES += \
     morphologyoperationscanvas.cpp \
     colormodelswidget.cpp \
     colormodelcanvas.cpp \
-    hsv.cpp
+    hsv.cpp \
+    imagecolormodelwidget.cpp \
+    imagecolormodelcanvas.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -58,7 +60,9 @@ HEADERS += \
     morphologyoperationscanvas.h \
     colormodelswidget.h \
     colormodelcanvas.h \
-    hsv.h
+    hsv.h \
+    imagecolormodelwidget.h \
+    imagecolormodelcanvas.h
 
 FORMS += \
         mainwindow.ui \
@@ -66,4 +70,5 @@ FORMS += \
     bsplinecurvewidget.ui \
     scanelinewidget.ui \
     morphologyoperationswidget.ui \
-    colormodelswidget.ui
+    colormodelswidget.ui \
+    imagecolormodelwidget.ui

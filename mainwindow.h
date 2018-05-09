@@ -7,6 +7,7 @@
 #include "scanelinewidget.h"
 #include "morphologyoperationswidget.h"
 #include "colormodelswidget.h"
+#include "imagecolormodelwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ public slots:
     void openScaneLineWidget(); // Method open new window with ScaneLine algorithm
     void openMorphologyOperationsWidget();
     void openColorModelsWidget();
+    void openImageColorModelWidget();
 
 private:
     Ui::MainWindow *ui;
@@ -34,6 +36,7 @@ private:
     ScaneLineWidget *scaneLineWidget; // ScaneLine Widget window
     MorphologyOperationsWidget *morphologyOperationsWidget;
     ColorModelsWidget *colorModelsWidget;
+    ImageColorModelWidget *imageColorModelWidget;
 };
 
 #endif // MAINWINDOW_H

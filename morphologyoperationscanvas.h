@@ -30,7 +30,7 @@ public slots:
 private:
     QSize canvasSize = QSize(650, 500);
     QImage qImage;
-    QImage painting = QImage("D:/GitHub/weston/sth.png");
+    QImage painting = QImage("sth.png");
     int kernelSize = 1;
     void repaintFromOneQImageToSecond(QImage *first, QImage *second);
     void putPixel(Point point, RGB rgb);

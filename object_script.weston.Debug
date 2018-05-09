@@ -15,6 +15,8 @@ INPUT(
 ./debug\colormodelswidget.o
 ./debug\colormodelcanvas.o
 ./debug\hsv.o
+./debug\imagecolormodelwidget.o
+./debug\imagecolormodelcanvas.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mycanvas.o
 ./debug\moc_beziercurvewidget.o
@@ -27,4 +29,6 @@ INPUT(
 ./debug\moc_morphologyoperationscanvas.o
 ./debug\moc_colormodelswidget.o
 ./debug\moc_colormodelcanvas.o
+./debug\moc_imagecolormodelwidget.o
+./debug\moc_imagecolormodelcanvas.o
 );

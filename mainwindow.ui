@@ -327,6 +327,7 @@
      <string>Modele barw</string>
     </property>
     <addaction name="colorModelsAction"/>
+    <addaction name="imageColorModelAction"/>
    </widget>
    <addaction name="curveMenu"/>
    <addaction name="menuScaneLine"/>
@@ -365,6 +366,11 @@
   <action name="colorModelsAction">
    <property name="text">
     <string>Uruchom</string>
+   </property>
+  </action>
+  <action name="imageColorModelAction">
+   <property name="text">
+    <string>Na obrazku</string>
    </property>
   </action>
  </widget>

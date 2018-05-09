@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->colorModelsButton, SIGNAL(pressed()), this, SLOT(openColorModelsWidget()));
     connect(ui->colorModelsAction, SIGNAL(triggered(bool)), this, SLOT(openColorModelsWidget()));
-
+    connect(ui->imageColorModelAction, SIGNAL(triggered(bool)), this, SLOT(openImageColorModelWidget()));
 }
 
 MainWindow::~MainWindow()
@@ -87,4 +87,11 @@ void MainWindow::openColorModelsWidget()
     colorModelsWidget = new ColorModelsWidget();
     colorModelsWidget->show();
     colorModelsWidget->setWindowTitle("Modele barw");
+}
+
+void MainWindow::openImageColorModelWidget()
+{
+    imageColorModelWidget = new ImageColorModelWidget();
+    imageColorModelWidget->show();
+    imageColorModelWidget->setWindowTitle("Modele barw");
 }
