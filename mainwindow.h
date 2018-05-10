@@ -8,6 +8,7 @@
 #include "morphologyoperationswidget.h"
 #include "colormodelswidget.h"
 #include "imagecolormodelwidget.h"
+#include "blendmodeswidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +29,7 @@ public slots:
     void openMorphologyOperationsWidget();
     void openColorModelsWidget();
     void openImageColorModelWidget();
+    void openBlendModesWidget();
 
 private:
     Ui::MainWindow *ui;
@@ -37,6 +39,7 @@ private:
     MorphologyOperationsWidget *morphologyOperationsWidget;
     ColorModelsWidget *colorModelsWidget;
     ImageColorModelWidget *imageColorModelWidget;
+    BlendModesWidget *blendModesWidget;
 };
 
 #endif // MAINWINDOW_H

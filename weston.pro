@@ -43,7 +43,9 @@ SOURCES += \
     colormodelcanvas.cpp \
     hsv.cpp \
     imagecolormodelwidget.cpp \
-    imagecolormodelcanvas.cpp
+    imagecolormodelcanvas.cpp \
+    blendmodeswidget.cpp \
+    blendmodescanvas.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -62,7 +64,9 @@ HEADERS += \
     colormodelcanvas.h \
     hsv.h \
     imagecolormodelwidget.h \
-    imagecolormodelcanvas.h
+    imagecolormodelcanvas.h \
+    blendmodeswidget.h \
+    blendmodescanvas.h
 
 FORMS += \
         mainwindow.ui \
@@ -71,4 +75,5 @@ FORMS += \
     scanelinewidget.ui \
     morphologyoperationswidget.ui \
     colormodelswidget.ui \
-    imagecolormodelwidget.ui
+    imagecolormodelwidget.ui \
+    blendmodeswidget.ui

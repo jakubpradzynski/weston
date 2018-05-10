@@ -44,6 +44,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->colorModelsButton, SIGNAL(pressed()), this, SLOT(openColorModelsWidget()));
     connect(ui->colorModelsAction, SIGNAL(triggered(bool)), this, SLOT(openColorModelsWidget()));
     connect(ui->imageColorModelAction, SIGNAL(triggered(bool)), this, SLOT(openImageColorModelWidget()));
+
+    connect(ui->blendModesAction, SIGNAL(triggered(bool)), this, SLOT(openBlendModesWidget()));
+    connect(ui->blendModesButton, SIGNAL(pressed()), this, SLOT(openBlendModesWidget()));
 }
 
 MainWindow::~MainWindow()
@@ -94,4 +97,11 @@ void MainWindow::openImageColorModelWidget()
     imageColorModelWidget = new ImageColorModelWidget();
     imageColorModelWidget->show();
     imageColorModelWidget->setWindowTitle("Modele barw");
+}
+
+void MainWindow::openBlendModesWidget()
+{
+    blendModesWidget = new BlendModesWidget();
+    blendModesWidget->show();
+    blendModesWidget->setWindowTitle("Blend modes");
 }

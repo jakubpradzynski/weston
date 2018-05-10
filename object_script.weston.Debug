@@ -17,6 +17,8 @@ INPUT(
 ./debug\hsv.o
 ./debug\imagecolormodelwidget.o
 ./debug\imagecolormodelcanvas.o
+./debug\blendmodeswidget.o
+./debug\blendmodescanvas.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mycanvas.o
 ./debug\moc_beziercurvewidget.o
@@ -31,4 +33,6 @@ INPUT(
 ./debug\moc_colormodelcanvas.o
 ./debug\moc_imagecolormodelwidget.o
 ./debug\moc_imagecolormodelcanvas.o
+./debug\moc_blendmodeswidget.o
+./debug\moc_blendmodescanvas.o
 );

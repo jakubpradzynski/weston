@@ -37,6 +37,7 @@ public:
     QAction *morphologyOperationsAction;
     QAction *colorModelsAction;
     QAction *imageColorModelAction;
+    QAction *blendModesAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -59,11 +60,13 @@ public:
     QPushButton *scaneLineButton;
     QPushButton *morphologyOperationsButton;
     QPushButton *colorModelsButton;
+    QPushButton *blendModesButton;
     QMenuBar *menuBar;
     QMenu *curveMenu;
     QMenu *menuScaneLine;
     QMenu *menuOperacje_morfologiczne;
     QMenu *menuModele_barw;
+    QMenu *menuBlend_modes;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -71,7 +74,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(850, 750);
+        MainWindow->resize(1180, 789);
         bezierCurveAction = new QAction(MainWindow);
         bezierCurveAction->setObjectName(QStringLiteral("bezierCurveAction"));
         bSplineCurveAction = new QAction(MainWindow);
@@ -84,6 +87,8 @@ public:
         colorModelsAction->setObjectName(QStringLiteral("colorModelsAction"));
         imageColorModelAction = new QAction(MainWindow);
         imageColorModelAction->setObjectName(QStringLiteral("imageColorModelAction"));
+        blendModesAction = new QAction(MainWindow);
+        blendModesAction->setObjectName(QStringLiteral("blendModesAction"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -156,10 +161,13 @@ public:
         colorModelsButton = new QPushButton(centralWidget);
         colorModelsButton->setObjectName(QStringLiteral("colorModelsButton"));
         colorModelsButton->setGeometry(QRect(650, 620, 141, 31));
+        blendModesButton = new QPushButton(centralWidget);
+        blendModesButton->setObjectName(QStringLiteral("blendModesButton"));
+        blendModesButton->setGeometry(QRect(800, 620, 141, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 850, 21));
+        menuBar->setGeometry(QRect(0, 0, 1180, 21));
         curveMenu = new QMenu(menuBar);
         curveMenu->setObjectName(QStringLiteral("curveMenu"));
         menuScaneLine = new QMenu(menuBar);
@@ -168,6 +176,8 @@ public:
         menuOperacje_morfologiczne->setObjectName(QStringLiteral("menuOperacje_morfologiczne"));
         menuModele_barw = new QMenu(menuBar);
         menuModele_barw->setObjectName(QStringLiteral("menuModele_barw"));
+        menuBlend_modes = new QMenu(menuBar);
+        menuBlend_modes->setObjectName(QStringLiteral("menuBlend_modes"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -180,12 +190,14 @@ public:
         menuBar->addAction(menuScaneLine->menuAction());
         menuBar->addAction(menuOperacje_morfologiczne->menuAction());
         menuBar->addAction(menuModele_barw->menuAction());
+        menuBar->addAction(menuBlend_modes->menuAction());
         curveMenu->addAction(bezierCurveAction);
         curveMenu->addAction(bSplineCurveAction);
         menuScaneLine->addAction(scaneLineAction);
         menuOperacje_morfologiczne->addAction(morphologyOperationsAction);
         menuModele_barw->addAction(colorModelsAction);
         menuModele_barw->addAction(imageColorModelAction);
+        menuBlend_modes->addAction(blendModesAction);
 
         retranslateUi(MainWindow);
 
@@ -201,6 +213,7 @@ public:
         morphologyOperationsAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         colorModelsAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         imageColorModelAction->setText(QApplication::translate("MainWindow", "Na obrazku", nullptr));
+        blendModesAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
         sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
@@ -217,10 +230,12 @@ public:
         scaneLineButton->setText(QApplication::translate("MainWindow", "ScanLine", nullptr));
         morphologyOperationsButton->setText(QApplication::translate("MainWindow", "Operacje morfologiczne", nullptr));
         colorModelsButton->setText(QApplication::translate("MainWindow", "Modele barw", nullptr));
+        blendModesButton->setText(QApplication::translate("MainWindow", "Blend modes", nullptr));
         curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
         menuScaneLine->setTitle(QApplication::translate("MainWindow", "ScanLine", nullptr));
         menuOperacje_morfologiczne->setTitle(QApplication::translate("MainWindow", "Operacje morfologiczne", nullptr));
         menuModele_barw->setTitle(QApplication::translate("MainWindow", "Modele barw", nullptr));
+        menuBlend_modes->setTitle(QApplication::translate("MainWindow", "Blend modes", nullptr));
     } // retranslateUi
 
 };

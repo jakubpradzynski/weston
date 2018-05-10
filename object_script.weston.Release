@@ -17,6 +17,8 @@ INPUT(
 ./release\hsv.o
 ./release\imagecolormodelwidget.o
 ./release\imagecolormodelcanvas.o
+./release\blendmodeswidget.o
+./release\blendmodescanvas.o
 ./release\moc_mainwindow.o
 ./release\moc_mycanvas.o
 ./release\moc_beziercurvewidget.o
@@ -31,4 +33,6 @@ INPUT(
 ./release\moc_colormodelcanvas.o
 ./release\moc_imagecolormodelwidget.o
 ./release\moc_imagecolormodelcanvas.o
+./release\moc_blendmodeswidget.o
+./release\moc_blendmodescanvas.o
 );

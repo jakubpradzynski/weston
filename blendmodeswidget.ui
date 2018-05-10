@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BlendModesWidget</class>
+ <widget class="QWidget" name="BlendModesWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1284</width>
+    <height>827</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="BlendModesCanvas" name="blendModesCanvas" native="true">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>611</width>
+     <height>561</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="layerOneButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>40</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Warstwa 1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="layerTwoButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>80</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Warstwa 2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="layerThreeButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>120</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Warstwa 3</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="alphaBlendingSlider">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>250</y>
+     <width>251</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="alphaBlendingLabel">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>230</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Alpha Blending 1 i 2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clearButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>160</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wyczyść</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="alphaBlendingForThreeLayersLabel">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>280</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Alpha Blending 1, 2 i 3</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="alphaBlendingForThreeLayersSlider">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>300</y>
+     <width>251</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="multiplyButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>390</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Multiply</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="screenButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>430</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Screen</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="overlayButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>470</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Overlay</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="darkenButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>510</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Darken</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lightenButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>550</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lighten</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="blendingModesLabel">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>360</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Blending modes for 2 layers</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="differenceButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>590</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Difference</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="additiveButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>630</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Additive</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="subtractiveButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>670</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Subtractive</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="blendingModesForThreeLayersLabel">
+   <property name="geometry">
+    <rect>
+     <x>1020</x>
+     <y>360</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Blending modes for 3 layers</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lightenForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>550</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lighten</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="differenceForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>590</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Difference</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="subtractiveForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>670</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Subtractive</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="darkenForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>510</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Darken</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="additiveForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>630</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Additive</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="multiplyForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>390</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Multiply</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="overlayForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>470</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Overlay</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="screenForThreeLayersButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>430</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Screen</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BlendModesCanvas</class>
+   <extends>QWidget</extends>
+   <header>blendmodescanvas.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
