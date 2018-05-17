@@ -38,92 +38,142 @@ void BlendModesCanvas::clearCanvas()
 
 void BlendModesCanvas::applyAlphaBlending(int alpha)
 {
-    alphaBlending(alpha);
+    alphaForTwoLayers = alpha;
+//    alphaBlending(alpha);
 }
 
 void BlendModesCanvas::applyAlphaBlendingForThreeLayers(int alpha)
 {
-    alphaBlendingForThreeLayers(alpha);
+    alphaForThreeLayers = alpha;
+//    alphaBlendingForThreeLayers(alpha);
 }
 
 void BlendModesCanvas::applyMultiplyMode()
 {
-    multiplyMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::multiplyMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyScreenMode()
 {
-    screenMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::screenMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyOverlayMode()
 {
-    overlayMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::overlayMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyDarkenMode()
 {
-    darkenMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::darkenMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyLightenMode()
 {
-    lightenMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::lightenMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyDifferenceMode()
 {
-    differenceMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::differenceMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyAdditiveMode()
 {
-    additiveMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::additiveMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applySubtractiveMode()
 {
-    subtractiveMode();
+    QImage imagesArray[] = {layerOne, layerTwo};
+    QImage newImage = blendMode(imagesArray, 2, BlendModesCanvas::subtractiveMode, alphaForTwoLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyMultiplyModeForThreeLayers()
 {
-    multiplyModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::multiplyMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyScreenModeForThreeLayers()
 {
-    screenModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::screenMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyOverlayModeForThreeLayers()
 {
-    overlayModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::overlayMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyDarkenModeForThreeLayers()
 {
-    darkenModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::darkenMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyLightenModeForThreeLayers()
 {
-    lightenModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::lightenMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyDifferenceModeForThreeLayers()
 {
-    differenceModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::differenceMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applyAdditiveModeForThreeLayers()
 {
-    additiveModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::additiveMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::applySubtractiveModeForThreeLayers()
 {
-    subtractiveModeForThreeLayers();
+    QImage imagesArray[] = {layerOne, layerTwo, layerThree};
+    QImage newImage = blendMode(imagesArray, 3, BlendModesCanvas::subtractiveMode, alphaForThreeLayers);
+    repaintFromOneQImageToSecond(&newImage, &qImage);
+    update();
 }
 
 void BlendModesCanvas::repaintFromOneQImageToSecond(QImage *first, QImage *second)
@@ -180,400 +230,117 @@ RGB BlendModesCanvas::getPointColor(QImage *qImage, Point point)
     return RGB(r, g, b);
 }
 
-void BlendModesCanvas::alphaBlending(int alpha)
+RGB BlendModesCanvas::alphaBlending(RGB layerOneRgb, RGB layerTwoRgb, int alpha)
 {
     float a = (float) alpha / 100;
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        a * layerTwoRgb.getR() + (1 - a) * layerOneRgb.getR(),
-                        a * layerTwoRgb.getG() + (1 - a) * layerOneRgb.getG(),
-                        a * layerTwoRgb.getB() + (1 - a) * layerOneRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB(
+                a * layerTwoRgb.getR() + (1 - a) * layerOneRgb.getR(),
+                a * layerTwoRgb.getG() + (1 - a) * layerOneRgb.getG(),
+                a * layerTwoRgb.getB() + (1 - a) * layerOneRgb.getB()
+                );
 }
 
-void BlendModesCanvas::alphaBlendingForThreeLayers(int alpha)
+QImage BlendModesCanvas::alphaBlending(QImage images[], int size, int alpha)
 {
+    int i = 0;
+    QImage newImage = images[i];
     float a = (float) alpha / 100;
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        a * layerTwoRgb.getR() + (1 - a) * layerOneRgb.getR(),
-                        a * layerTwoRgb.getG() + (1 - a) * layerOneRgb.getG(),
-                        a * layerTwoRgb.getB() + (1 - a) * layerOneRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
+    for (; i < size - 1; i++) {
+        for(int x = 0; x < newImage.width(); x++) {
+            for(int y = 0; y < newImage.height(); y++) {
+                RGB layerOneRgb = getPointColor(&newImage, Point(x, y));
+                RGB layerTwoRgb = getPointColor(&images[i + 1], Point(x, y));
+                RGB newRgb = RGB(
+                            a * layerTwoRgb.getR() + (1 - a) * layerOneRgb.getR(),
+                            a * layerTwoRgb.getG() + (1 - a) * layerOneRgb.getG(),
+                            a * layerTwoRgb.getB() + (1 - a) * layerOneRgb.getB()
+                            );
+                putPixel(&newImage, Point(x, y), newRgb);
+            }
         }
     }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        a * layerThreeRgb.getR() + (1 - a) * qImageRgb.getR(),
-                        a * layerThreeRgb.getG() + (1 - a) * qImageRgb.getG(),
-                        a * layerThreeRgb.getB() + (1 - a) * qImageRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return newImage;
 }
 
-void BlendModesCanvas::multiplyMode()
+QImage BlendModesCanvas::blendMode(QImage images[], int size, RGB (BlendModesCanvas::*modeFunction)(RGB, RGB), int alpha)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() * layerTwoRgb.getR()) >> 8,
-                        (layerOneRgb.getG() * layerTwoRgb.getG()) >> 8,
-                        (layerOneRgb.getB() * layerTwoRgb.getB()) >> 8
-                        );
-            putPixel(Point(x, y), newRgb);
+    int i = 0;
+    QImage newImage = QImage(images[0].width(), images[0].height(), QImage::Format_RGB32);
+    repaintFromOneQImageToSecond(&images[0], &newImage);
+    for (; i < size - 1; i++) {
+        for(int x = 0; x < newImage.width(); x++) {
+            for(int y = 0; y < newImage.height(); y++) {
+                RGB layerOneRgb = getPointColor(&newImage, Point(x, y));
+                RGB layerTwoRgb = getPointColor(&images[i + 1], Point(x, y));
+                RGB newRgb = (this->*modeFunction)(layerOneRgb, layerTwoRgb);
+                newRgb = alphaBlending(layerOneRgb, newRgb, alpha);
+                putPixel(&newImage, Point(x, y), newRgb);
+            }
         }
     }
+    return newImage;
 }
 
-void BlendModesCanvas::screenMode()
+RGB BlendModesCanvas::multiplyMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 8),
-                        255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 8),
-                        255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 8)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB((layerOneRgb.getR() * layerTwoRgb.getR()) >> 8,
+               (layerOneRgb.getG() * layerTwoRgb.getG()) >> 8,
+               (layerOneRgb.getB() * layerTwoRgb.getB()) >> 8
+               );
 }
 
-void BlendModesCanvas::overlayMode()
+RGB BlendModesCanvas::screenMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() < 128) ? ((layerOneRgb.getR() * layerTwoRgb.getR()) >> 7) : (255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 7)),
-                        (layerOneRgb.getG() < 128) ? ((layerOneRgb.getG() * layerTwoRgb.getG()) >> 7) : (255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 7)),
-                        (layerOneRgb.getB() < 128) ? ((layerOneRgb.getB() * layerTwoRgb.getB()) >> 7) : (255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 7))
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB(255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 8),
+               255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 8),
+               255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 8)
+               );
 }
 
-void BlendModesCanvas::darkenMode()
+RGB BlendModesCanvas::overlayMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() > layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
-                        (layerOneRgb.getG() > layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
-                        (layerOneRgb.getB() > layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB((layerOneRgb.getR() < 128) ? ((layerOneRgb.getR() * layerTwoRgb.getR()) >> 7) : (255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 7)),
+               (layerOneRgb.getG() < 128) ? ((layerOneRgb.getG() * layerTwoRgb.getG()) >> 7) : (255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 7)),
+               (layerOneRgb.getB() < 128) ? ((layerOneRgb.getB() * layerTwoRgb.getB()) >> 7) : (255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 7))
+               );
 }
 
-void BlendModesCanvas::lightenMode()
+RGB BlendModesCanvas::darkenMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() < layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
-                        (layerOneRgb.getG() < layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
-                        (layerOneRgb.getB() < layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB((layerOneRgb.getR() > layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
+               (layerOneRgb.getG() > layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
+               (layerOneRgb.getB() > layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
+               );
 }
 
-void BlendModesCanvas::differenceMode()
+RGB BlendModesCanvas::lightenMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        abs(layerOneRgb.getR() - layerTwoRgb.getR()),
-                        abs(layerOneRgb.getG() - layerTwoRgb.getG()),
-                        abs(layerOneRgb.getB() - layerTwoRgb.getB())
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB((layerOneRgb.getR() < layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
+               (layerOneRgb.getG() < layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
+               (layerOneRgb.getB() < layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
+               );
 }
 
-void BlendModesCanvas::additiveMode()
+RGB BlendModesCanvas::differenceMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        std::min(layerOneRgb.getR() + layerTwoRgb.getR(), 255),
-                        std::min(layerOneRgb.getG() + layerTwoRgb.getG(), 255),
-                        std::min(layerOneRgb.getB() + layerTwoRgb.getB(), 255)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB(abs(layerOneRgb.getR() - layerTwoRgb.getR()),
+               abs(layerOneRgb.getG() - layerTwoRgb.getG()),
+               abs(layerOneRgb.getB() - layerTwoRgb.getB())
+               );
 }
 
-void BlendModesCanvas::subtractiveMode()
+RGB BlendModesCanvas::additiveMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        std::max(layerOneRgb.getR() + layerTwoRgb.getR() - 255, 0),
-                        std::max(layerOneRgb.getG() + layerTwoRgb.getG() - 255, 0),
-                        std::max(layerOneRgb.getB() + layerTwoRgb.getB() - 255, 0)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB(std::min(layerOneRgb.getR() + layerTwoRgb.getR(), 255),
+               std::min(layerOneRgb.getG() + layerTwoRgb.getG(), 255),
+               std::min(layerOneRgb.getB() + layerTwoRgb.getB(), 255)
+               );
 }
 
-void BlendModesCanvas::multiplyModeForThreeLayers()
+RGB BlendModesCanvas::subtractiveMode(RGB layerOneRgb, RGB layerTwoRgb)
 {
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() * layerTwoRgb.getR()) >> 8,
-                        (layerOneRgb.getG() * layerTwoRgb.getG()) >> 8,
-                        (layerOneRgb.getB() * layerTwoRgb.getB()) >> 8
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        (qImageRgb.getR() * layerThreeRgb.getR()) >> 8,
-                        (qImageRgb.getG() * layerThreeRgb.getG()) >> 8,
-                        (qImageRgb.getB() * layerThreeRgb.getB()) >> 8
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::screenModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 8),
-                        255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 8),
-                        255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 8)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        255 - ((255 - qImageRgb.getR()) * (255 - layerThreeRgb.getR()) >> 8),
-                        255 - ((255 - qImageRgb.getG()) * (255 - layerThreeRgb.getG()) >> 8),
-                        255 - ((255 - qImageRgb.getB()) * (255 - layerThreeRgb.getB()) >> 8)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::overlayModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() < 128) ? ((layerOneRgb.getR() * layerTwoRgb.getR()) >> 7) : (255 - ((255 - layerOneRgb.getR()) * (255 - layerTwoRgb.getR()) >> 7)),
-                        (layerOneRgb.getG() < 128) ? ((layerOneRgb.getG() * layerTwoRgb.getG()) >> 7) : (255 - ((255 - layerOneRgb.getG()) * (255 - layerTwoRgb.getG()) >> 7)),
-                        (layerOneRgb.getB() < 128) ? ((layerOneRgb.getB() * layerTwoRgb.getB()) >> 7) : (255 - ((255 - layerOneRgb.getB()) * (255 - layerTwoRgb.getB()) >> 7))
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        (qImageRgb.getR() < 128) ? ((qImageRgb.getR() * layerThreeRgb.getR()) >> 7) : (255 - ((255 - qImageRgb.getR()) * (255 - layerThreeRgb.getR()) >> 7)),
-                        (qImageRgb.getG() < 128) ? ((qImageRgb.getG() * layerThreeRgb.getG()) >> 7) : (255 - ((255 - qImageRgb.getG()) * (255 - layerThreeRgb.getG()) >> 7)),
-                        (qImageRgb.getB() < 128) ? ((qImageRgb.getB() * layerThreeRgb.getB()) >> 7) : (255 - ((255 - qImageRgb.getB()) * (255 - layerThreeRgb.getB()) >> 7))
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::darkenModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() > layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
-                        (layerOneRgb.getG() > layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
-                        (layerOneRgb.getB() > layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        (qImageRgb.getR() > layerThreeRgb.getR()) ? qImageRgb.getR() : layerThreeRgb.getR(),
-                        (qImageRgb.getG() > layerThreeRgb.getG()) ? qImageRgb.getG() : layerThreeRgb.getG(),
-                        (qImageRgb.getB() > layerThreeRgb.getB()) ? qImageRgb.getB() : layerThreeRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::lightenModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        (layerOneRgb.getR() < layerTwoRgb.getR()) ? layerOneRgb.getR() : layerTwoRgb.getR(),
-                        (layerOneRgb.getG() < layerTwoRgb.getG()) ? layerOneRgb.getG() : layerTwoRgb.getG(),
-                        (layerOneRgb.getB() < layerTwoRgb.getB()) ? layerOneRgb.getB() : layerTwoRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        (qImageRgb.getR() < layerThreeRgb.getR()) ? qImageRgb.getR() : layerThreeRgb.getR(),
-                        (qImageRgb.getG() < layerThreeRgb.getG()) ? qImageRgb.getG() : layerThreeRgb.getG(),
-                        (qImageRgb.getB() < layerThreeRgb.getB()) ? qImageRgb.getB() : layerThreeRgb.getB()
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::differenceModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        abs(layerOneRgb.getR() - layerTwoRgb.getR()),
-                        abs(layerOneRgb.getG() - layerTwoRgb.getG()),
-                        abs(layerOneRgb.getB() - layerTwoRgb.getB())
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        abs(qImageRgb.getR() - layerThreeRgb.getR()),
-                        abs(qImageRgb.getG() - layerThreeRgb.getG()),
-                        abs(qImageRgb.getB() - layerThreeRgb.getB())
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::additiveModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        std::min(layerOneRgb.getR() + layerTwoRgb.getR(), 255),
-                        std::min(layerOneRgb.getG() + layerTwoRgb.getG(), 255),
-                        std::min(layerOneRgb.getB() + layerTwoRgb.getB(), 255)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        std::min(qImageRgb.getR() + layerThreeRgb.getR(), 255),
-                        std::min(qImageRgb.getG() + layerThreeRgb.getG(), 255),
-                        std::min(qImageRgb.getB() + layerThreeRgb.getB(), 255)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-}
-
-void BlendModesCanvas::subtractiveModeForThreeLayers()
-{
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB layerOneRgb = getPointColor(&layerOne, Point(x, y));
-            RGB layerTwoRgb = getPointColor(&layerTwo, Point(x, y));
-            RGB newRgb = RGB(
-                        std::max(layerOneRgb.getR() + layerTwoRgb.getR() - 255, 0),
-                        std::max(layerOneRgb.getG() + layerTwoRgb.getG() - 255, 0),
-                        std::max(layerOneRgb.getB() + layerTwoRgb.getB() - 255, 0)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
-    for(int x = 0; x < layerSize.width(); x++) {
-        for(int y = 0; y < layerSize.height(); y++) {
-            RGB qImageRgb = getPointColor(&qImage, Point(x, y));
-            RGB layerThreeRgb = getPointColor(&layerThree, Point(x, y));
-            RGB newRgb = RGB(
-                        std::max(qImageRgb.getR() + layerThreeRgb.getR() - 255, 0),
-                        std::max(qImageRgb.getG() + layerThreeRgb.getG() - 255, 0),
-                        std::max(qImageRgb.getB() + layerThreeRgb.getB() - 255, 0)
-                        );
-            putPixel(Point(x, y), newRgb);
-        }
-    }
+    return RGB(std::max(layerOneRgb.getR() + layerTwoRgb.getR() - 255, 0),
+               std::max(layerOneRgb.getG() + layerTwoRgb.getG() - 255, 0),
+               std::max(layerOneRgb.getB() + layerTwoRgb.getB() - 255, 0)
+               );
 }

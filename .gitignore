@@ -5,3 +5,5 @@ moc_*
 *.app
 .DS_Store
 *.zip
+*.7z
+armadillo*

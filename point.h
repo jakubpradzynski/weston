@@ -4,7 +4,7 @@
 /* Class representing point in two-dimensional plane */
 class Point
 {
-private:
+protected:
     // x and y values
     int x, y;
 
@@ -22,6 +22,7 @@ public:
     void operator =(Point point);
     bool operator ==(Point point);
     bool operator !=(Point point);
+
     // Destructor
     ~Point();
 };

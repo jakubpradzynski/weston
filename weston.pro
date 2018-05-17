@@ -45,7 +45,10 @@ SOURCES += \
     imagecolormodelwidget.cpp \
     imagecolormodelcanvas.cpp \
     blendmodeswidget.cpp \
-    blendmodescanvas.cpp
+    blendmodescanvas.cpp \
+    transformations2dwidget.cpp \
+    transformations2dcanvas.cpp \
+    point3.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -66,7 +69,10 @@ HEADERS += \
     imagecolormodelwidget.h \
     imagecolormodelcanvas.h \
     blendmodeswidget.h \
-    blendmodescanvas.h
+    blendmodescanvas.h \
+    transformations2dwidget.h \
+    transformations2dcanvas.h \
+    point3.h
 
 FORMS += \
         mainwindow.ui \
@@ -76,4 +82,5 @@ FORMS += \
     morphologyoperationswidget.ui \
     colormodelswidget.ui \
     imagecolormodelwidget.ui \
-    blendmodeswidget.ui
+    blendmodeswidget.ui \
+    transformations2dwidget.ui

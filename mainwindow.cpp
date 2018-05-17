@@ -47,6 +47,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->blendModesAction, SIGNAL(triggered(bool)), this, SLOT(openBlendModesWidget()));
     connect(ui->blendModesButton, SIGNAL(pressed()), this, SLOT(openBlendModesWidget()));
+
+    connect(ui->transformations2DAction, SIGNAL(triggered(bool)), this, SLOT(openTransformations2DWidget()));
+    connect(ui->transformations2DButton, SIGNAL(pressed()), this, SLOT(openTransformations2DWidget()));
 }
 
 MainWindow::~MainWindow()
@@ -104,4 +107,11 @@ void MainWindow::openBlendModesWidget()
     blendModesWidget = new BlendModesWidget();
     blendModesWidget->show();
     blendModesWidget->setWindowTitle("Blend modes");
+}
+
+void MainWindow::openTransformations2DWidget()
+{
+    transformations2DWidget = new Transformations2DWidget();
+    transformations2DWidget->show();
+    transformations2DWidget->setWindowTitle("Transformacje 2D");
 }

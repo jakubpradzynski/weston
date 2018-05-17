@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Transformations2DWidget</class>
+ <widget class="QWidget" name="Transformations2DWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1070</width>
+    <height>684</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="Transformations2DCanvas" name="transformations2DCanvas" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>701</width>
+     <height>641</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rotation">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>23</y>
+     <width>47</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Obrót</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="alphaRotationSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>50</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-90</number>
+   </property>
+   <property name="maximum">
+    <number>90</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="alphaRotationLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>46</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string>Alpha</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="scaling">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>106</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Skalowanie</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="xScalingSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>130</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10</number>
+   </property>
+   <property name="value">
+    <number>1</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="xScalingLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>130</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="translation">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>220</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Translacja</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="xTranslationSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>245</y>
+     <width>160</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>300</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="yTranslationLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>275</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Y</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="yTranslationSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>275</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>300</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="xTranslationLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>245</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="yShearingLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>385</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Y</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="xShearingSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>355</y>
+     <width>160</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="yShearingSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>385</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="xShearingLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>355</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shearing">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>330</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Pochylenie</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="yScalingSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>160</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10</number>
+   </property>
+   <property name="value">
+    <number>1</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="yScalingLabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>160</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string>Y</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Transformations2DCanvas</class>
+   <extends>QWidget</extends>
+   <header>transformations2dcanvas.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

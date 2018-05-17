@@ -19,6 +19,9 @@ INPUT(
 ./debug\imagecolormodelcanvas.o
 ./debug\blendmodeswidget.o
 ./debug\blendmodescanvas.o
+./debug\transformations2dwidget.o
+./debug\transformations2dcanvas.o
+./debug\point3.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mycanvas.o
 ./debug\moc_beziercurvewidget.o
@@ -35,4 +38,6 @@ INPUT(
 ./debug\moc_imagecolormodelcanvas.o
 ./debug\moc_blendmodeswidget.o
 ./debug\moc_blendmodescanvas.o
+./debug\moc_transformations2dwidget.o
+./debug\moc_transformations2dcanvas.o
 );
