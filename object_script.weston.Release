@@ -22,6 +22,10 @@ INPUT(
 ./release\transformations2dwidget.o
 ./release\transformations2dcanvas.o
 ./release\point3.o
+./release\texturingwidget.o
+./release\texturingcanvas.o
+./release\floatpoint.o
+./release\four.o
 ./release\moc_mainwindow.o
 ./release\moc_mycanvas.o
 ./release\moc_beziercurvewidget.o
@@ -40,4 +44,6 @@ INPUT(
 ./release\moc_blendmodescanvas.o
 ./release\moc_transformations2dwidget.o
 ./release\moc_transformations2dcanvas.o
+./release\moc_texturingwidget.o
+./release\moc_texturingcanvas.o
 );

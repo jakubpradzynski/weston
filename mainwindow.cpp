@@ -50,6 +50,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->transformations2DAction, SIGNAL(triggered(bool)), this, SLOT(openTransformations2DWidget()));
     connect(ui->transformations2DButton, SIGNAL(pressed()), this, SLOT(openTransformations2DWidget()));
+
+    connect(ui->texturingButton, SIGNAL(pressed()), this, SLOT(openTexturingWidget()));
+    connect(ui->texturingAction, SIGNAL(triggered(bool)), this, SLOT(openTexturingWidget()));
 }
 
 MainWindow::~MainWindow()
@@ -114,4 +117,11 @@ void MainWindow::openTransformations2DWidget()
     transformations2DWidget = new Transformations2DWidget();
     transformations2DWidget->show();
     transformations2DWidget->setWindowTitle("Transformacje 2D");
+}
+
+void MainWindow::openTexturingWidget()
+{
+    texturingWidget = new TexturingWidget();
+    texturingWidget->show();
+    texturingWidget->setWindowTitle("Teksturowanie");
 }

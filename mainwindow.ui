@@ -319,6 +319,19 @@
      <string>Transformacje 2D</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="texturingButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>670</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Teksturowanie</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -367,12 +380,19 @@
     </property>
     <addaction name="transformations2DAction"/>
    </widget>
+   <widget class="QMenu" name="menuTexturing">
+    <property name="title">
+     <string>Texturing</string>
+    </property>
+    <addaction name="texturingAction"/>
+   </widget>
    <addaction name="curveMenu"/>
    <addaction name="menuScaneLine"/>
    <addaction name="menuOperacje_morfologiczne"/>
    <addaction name="menuModele_barw"/>
    <addaction name="menuBlend_modes"/>
    <addaction name="menuTransformacje"/>
+   <addaction name="menuTexturing"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -421,6 +441,11 @@
   <action name="transformations2DAction">
    <property name="text">
     <string>2D</string>
+   </property>
+  </action>
+  <action name="texturingAction">
+   <property name="text">
+    <string>Uruchom</string>
    </property>
   </action>
  </widget>

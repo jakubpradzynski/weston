@@ -48,7 +48,11 @@ SOURCES += \
     blendmodescanvas.cpp \
     transformations2dwidget.cpp \
     transformations2dcanvas.cpp \
-    point3.cpp
+    point3.cpp \
+    texturingwidget.cpp \
+    texturingcanvas.cpp \
+    floatpoint.cpp \
+    four.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -72,7 +76,11 @@ HEADERS += \
     blendmodescanvas.h \
     transformations2dwidget.h \
     transformations2dcanvas.h \
-    point3.h
+    point3.h \
+    texturingwidget.h \
+    texturingcanvas.h \
+    floatpoint.h \
+    four.h
 
 FORMS += \
         mainwindow.ui \
@@ -83,4 +91,5 @@ FORMS += \
     colormodelswidget.ui \
     imagecolormodelwidget.ui \
     blendmodeswidget.ui \
-    transformations2dwidget.ui
+    transformations2dwidget.ui \
+    texturingwidget.ui

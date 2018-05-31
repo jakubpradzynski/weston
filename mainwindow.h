@@ -10,6 +10,7 @@
 #include "imagecolormodelwidget.h"
 #include "blendmodeswidget.h"
 #include "transformations2dwidget.h"
+#include "texturingwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +33,7 @@ public slots:
     void openImageColorModelWidget();
     void openBlendModesWidget();
     void openTransformations2DWidget();
+    void openTexturingWidget();
 
 private:
     Ui::MainWindow *ui;
@@ -43,6 +45,7 @@ private:
     ImageColorModelWidget *imageColorModelWidget;
     BlendModesWidget *blendModesWidget;
     Transformations2DWidget *transformations2DWidget;
+    TexturingWidget *texturingWidget;
 };
 
 #endif // MAINWINDOW_H
