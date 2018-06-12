@@ -332,6 +332,19 @@
      <string>Teksturowanie</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="transformations3DButton">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>670</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Transformacje 3D</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -379,6 +392,7 @@
      <string>Transformacje</string>
     </property>
     <addaction name="transformations2DAction"/>
+    <addaction name="transformations3DAction"/>
    </widget>
    <widget class="QMenu" name="menuTexturing">
     <property name="title">
@@ -446,6 +460,11 @@
   <action name="texturingAction">
    <property name="text">
     <string>Uruchom</string>
+   </property>
+  </action>
+  <action name="transformations3DAction">
+   <property name="text">
+    <string>3D</string>
    </property>
   </action>
  </widget>

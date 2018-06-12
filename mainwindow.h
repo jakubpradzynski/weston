@@ -11,6 +11,7 @@
 #include "blendmodeswidget.h"
 #include "transformations2dwidget.h"
 #include "texturingwidget.h"
+#include "transformations3dwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -34,6 +35,7 @@ public slots:
     void openBlendModesWidget();
     void openTransformations2DWidget();
     void openTexturingWidget();
+    void openTransformations3DWidget();
 
 private:
     Ui::MainWindow *ui;
@@ -46,6 +48,7 @@ private:
     BlendModesWidget *blendModesWidget;
     Transformations2DWidget *transformations2DWidget;
     TexturingWidget *texturingWidget;
+    Transformations3DWidget *transformations3DWidget;
 };
 
 #endif // MAINWINDOW_H

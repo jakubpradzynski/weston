@@ -40,6 +40,7 @@ public:
     QAction *blendModesAction;
     QAction *transformations2DAction;
     QAction *texturingAction;
+    QAction *transformations3DAction;
     QWidget *centralWidget;
     MyCanvas *myCanvas;
     QPushButton *pencilButton;
@@ -65,6 +66,7 @@ public:
     QPushButton *blendModesButton;
     QPushButton *transformations2DButton;
     QPushButton *texturingButton;
+    QPushButton *transformations3DButton;
     QMenuBar *menuBar;
     QMenu *curveMenu;
     QMenu *menuScaneLine;
@@ -99,6 +101,8 @@ public:
         transformations2DAction->setObjectName(QStringLiteral("transformations2DAction"));
         texturingAction = new QAction(MainWindow);
         texturingAction->setObjectName(QStringLiteral("texturingAction"));
+        transformations3DAction = new QAction(MainWindow);
+        transformations3DAction->setObjectName(QStringLiteral("transformations3DAction"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         myCanvas = new MyCanvas(centralWidget);
@@ -180,6 +184,9 @@ public:
         texturingButton = new QPushButton(centralWidget);
         texturingButton->setObjectName(QStringLiteral("texturingButton"));
         texturingButton->setGeometry(QRect(30, 670, 141, 31));
+        transformations3DButton = new QPushButton(centralWidget);
+        transformations3DButton->setObjectName(QStringLiteral("transformations3DButton"));
+        transformations3DButton->setGeometry(QRect(180, 670, 141, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -221,6 +228,7 @@ public:
         menuModele_barw->addAction(imageColorModelAction);
         menuBlend_modes->addAction(blendModesAction);
         menuTransformacje->addAction(transformations2DAction);
+        menuTransformacje->addAction(transformations3DAction);
         menuTexturing->addAction(texturingAction);
 
         retranslateUi(MainWindow);
@@ -240,6 +248,7 @@ public:
         blendModesAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
         transformations2DAction->setText(QApplication::translate("MainWindow", "2D", nullptr));
         texturingAction->setText(QApplication::translate("MainWindow", "Uruchom", nullptr));
+        transformations3DAction->setText(QApplication::translate("MainWindow", "3D", nullptr));
         pencilButton->setText(QApplication::translate("MainWindow", "O\305\202\303\263wek", nullptr));
         sprayButton->setText(QApplication::translate("MainWindow", "Spray", nullptr));
         lineButton->setText(QApplication::translate("MainWindow", "Linia", nullptr));
@@ -259,6 +268,7 @@ public:
         blendModesButton->setText(QApplication::translate("MainWindow", "Blend modes", nullptr));
         transformations2DButton->setText(QApplication::translate("MainWindow", "Transformacje 2D", nullptr));
         texturingButton->setText(QApplication::translate("MainWindow", "Teksturowanie", nullptr));
+        transformations3DButton->setText(QApplication::translate("MainWindow", "Transformacje 3D", nullptr));
         curveMenu->setTitle(QApplication::translate("MainWindow", "Krzywe", nullptr));
         menuScaneLine->setTitle(QApplication::translate("MainWindow", "ScanLine", nullptr));
         menuOperacje_morfologiczne->setTitle(QApplication::translate("MainWindow", "Operacje morfologiczne", nullptr));

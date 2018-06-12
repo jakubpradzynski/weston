@@ -53,6 +53,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->texturingButton, SIGNAL(pressed()), this, SLOT(openTexturingWidget()));
     connect(ui->texturingAction, SIGNAL(triggered(bool)), this, SLOT(openTexturingWidget()));
+
+    connect(ui->transformations3DAction, SIGNAL(triggered(bool)), this, SLOT(openTransformations3DWidget()));
+    connect(ui->transformations3DButton, SIGNAL(pressed()), this, SLOT(openTransformations3DWidget()));
 }
 
 MainWindow::~MainWindow()
@@ -124,4 +127,11 @@ void MainWindow::openTexturingWidget()
     texturingWidget = new TexturingWidget();
     texturingWidget->show();
     texturingWidget->setWindowTitle("Teksturowanie");
+}
+
+void MainWindow::openTransformations3DWidget()
+{
+    transformations3DWidget = new Transformations3DWidget();
+    transformations3DWidget->show();
+    transformations3DWidget->setWindowTitle("Transformacje 3D");
 }

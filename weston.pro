@@ -52,7 +52,10 @@ SOURCES += \
     texturingwidget.cpp \
     texturingcanvas.cpp \
     floatpoint.cpp \
-    four.cpp
+    four.cpp \
+    transformations3dwidget.cpp \
+    transformations3dcanvas.cpp \
+    matrix.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -80,7 +83,10 @@ HEADERS += \
     texturingwidget.h \
     texturingcanvas.h \
     floatpoint.h \
-    four.h
+    four.h \
+    transformations3dwidget.h \
+    transformations3dcanvas.h \
+    matrix.h
 
 FORMS += \
         mainwindow.ui \
@@ -92,4 +98,5 @@ FORMS += \
     imagecolormodelwidget.ui \
     blendmodeswidget.ui \
     transformations2dwidget.ui \
-    texturingwidget.ui
+    texturingwidget.ui \
+    transformations3dwidget.ui

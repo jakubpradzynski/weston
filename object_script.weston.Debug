@@ -26,6 +26,9 @@ INPUT(
 ./debug\texturingcanvas.o
 ./debug\floatpoint.o
 ./debug\four.o
+./debug\transformations3dwidget.o
+./debug\transformations3dcanvas.o
+./debug\matrix.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mycanvas.o
 ./debug\moc_beziercurvewidget.o
@@ -46,4 +49,6 @@ INPUT(
 ./debug\moc_transformations2dcanvas.o
 ./debug\moc_texturingwidget.o
 ./debug\moc_texturingcanvas.o
+./debug\moc_transformations3dwidget.o
+./debug\moc_transformations3dcanvas.o
 );
